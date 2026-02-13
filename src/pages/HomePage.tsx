@@ -8,21 +8,22 @@ import { LinkedInActivity } from '@/components/sections/LinkedInActivity';
 import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
   useEffect(() => {
-    document.title = "Hi, I'm Brett.";
+    // Management of document title and potentially other meta tags
+    document.title = "Hi, I'm Brett Dunsmore | Helping Build a Better Internet";
   }, []);
-
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-blue-600 selection:text-white flex flex-col transition-colors duration-300">
       {/* Skip to top anchor for programmatic and keyboard navigation */}
       <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
       <main id="main-content" className="flex-grow focus:outline-none" tabIndex={-1}>
-        <Hero />
-        <Experience />
-        <LinkedInActivity />
-        <Presentations />
+        {/* Sections must use these IDs for Navbar/ScrollSpy synchronization */}
+        <Hero /> {/* contains id="about" */}
+        <Experience /> {/* contains id="experience" */}
+        <LinkedInActivity /> {/* contains id="linkedin-activity" */}
+        <Presentations /> {/* contains id="presentations" */}
       </main>
-      <Footer />
+      <Footer /> {/* contains id="contact" */}
       {/* Global toast notifications */}
       <Toaster richColors closeButton position="bottom-right" />
     </div>

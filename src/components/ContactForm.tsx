@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -41,7 +41,7 @@ export function ContactForm({ trigger }: ContactFormProps) {
       message: "",
     },
   });
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  const onSubmit = useCallback(async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
     try {
       const response = await fetch('/api/contact', {
@@ -63,7 +63,7 @@ export function ContactForm({ trigger }: ContactFormProps) {
     } finally {
       setIsSubmitting(false);
     }
-  }
+  }, [form]);
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>

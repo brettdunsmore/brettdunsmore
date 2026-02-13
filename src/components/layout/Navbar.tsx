@@ -12,9 +12,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 const NAV_LINKS = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'About', href: '#about', id: 'about' },
+  { name: 'Experience', href: '#experience', id: 'experience' },
+  { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
   <a
@@ -36,7 +36,6 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  
   const activeSection = useScrollSpy([
     'about',
     'experience',
@@ -44,7 +43,6 @@ export function Navbar() {
     'presentations',
     'contact'
   ]);
-
   const rafIdRef = useRef<number>(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +96,7 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
                   "text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
-                  activeSection === link.href.replace('#', '') ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                  activeSection === link.id ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {link.name}
@@ -136,7 +134,10 @@ export function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-lg font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm"
+                      className={cn(
+                        "text-lg font-semibold transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm",
+                        activeSection === link.id ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                      )}
                     >
                       {link.name}
                     </a>
