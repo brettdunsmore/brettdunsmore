@@ -13,12 +13,12 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="flex flex-col items-center justify-center mb-8">
+          <div className="flex flex-col items-center justify-center mb-10">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
-              className="relative mb-8"
+              className="relative"
             >
               <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full" />
               <img
@@ -28,9 +28,6 @@ export function Hero() {
                 className="relative w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-background shadow-xl hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
-            <span className="inline-block px-3 py-1 text-xs font-semibold tracking-widest uppercase bg-blue-100 text-blue-700 rounded-full dark:bg-blue-900/30 dark:text-blue-400">
-              Available for new opportunities
-            </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-blue-600">.</span>

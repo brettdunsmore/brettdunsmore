@@ -20,18 +20,27 @@ export function Experience() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <Card className="border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all overflow-hidden bg-card">
+                <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all overflow-hidden bg-card">
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                      <div className="space-y-1.5">
-                        <CardTitle className="text-2xl font-bold text-foreground">
-                          {exp.company}
-                        </CardTitle>
-                        {exp.description && (
-                          <p className="text-sm font-medium text-muted-foreground italic">
-                            {exp.description}
-                          </p>
-                        )}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
+                        <div className="shrink-0 w-12 h-12 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-colors">
+                          <img 
+                            src={exp.logo} 
+                            alt={`${exp.company} logo`} 
+                            className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                          />
+                        </div>
+                        <div className="space-y-1.5">
+                          <CardTitle className="text-2xl font-bold text-foreground">
+                            {exp.company}
+                          </CardTitle>
+                          {exp.description && (
+                            <p className="text-sm font-medium text-muted-foreground italic">
+                              {exp.description}
+                            </p>
+                          )}
+                        </div>
                       </div>
                       <div className="shrink-0">
                         <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50">
