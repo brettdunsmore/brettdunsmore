@@ -94,12 +94,6 @@ export const profileData = {
       event: "Emerging Tech Showcase",
       videoId: "SmZTZ2SzWLc",
       videoUrl: "https://youtu.be/SmZTZ2SzWLc"
-    },
-    {
-      title: "CIO Strategy Summit",
-      event: "Executive Leadership Series",
-      videoId: "-kG6sgroouA",
-      videoUrl: "https://youtu.be/-kG6sgroouA"
     }
   ]
 };
