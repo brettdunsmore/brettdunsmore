@@ -19,7 +19,6 @@ const NAV_LINKS = [
 const SCROLL_SPY_SECTIONS = [
   'about',
   'experience',
-  'linkedin-activity',
   'presentations',
   'contact'
 ];

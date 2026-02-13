@@ -4,7 +4,6 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Experience } from '@/components/sections/Experience';
-import { LinkedInActivity } from '@/components/sections/LinkedInActivity';
 import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
   useEffect(() => {
@@ -20,7 +19,6 @@ export function HomePage() {
         {/* Sections must use these IDs for Navbar/ScrollSpy synchronization */}
         <Hero /> {/* contains id="about" */}
         <Experience /> {/* contains id="experience" */}
-        <LinkedInActivity /> {/* contains id="linkedin-activity" */}
         <Presentations /> {/* contains id="presentations" */}
       </main>
       <Footer /> {/* contains id="contact" */}
