@@ -11,7 +11,7 @@ export const profileData = {
   experience: [
     {
       company: "Cloudflare",
-      logo: "https://logo.clearbit.com/cloudflare.com",
+      logo: "https://logo.clearbit.com/cloudflare.com?size=128",
       role: "Senior Named Account Executive",
       period: "October 2025 - Present",
       description: "Public Sector (QLD/NT)",
@@ -19,7 +19,7 @@ export const profileData = {
     },
     {
       company: "Dell Technologies",
-      logo: "https://logo.clearbit.com/dell.com",
+      logo: "https://logo.clearbit.com/dell.com?size=128",
       role: "AI Solutions Executive (Australia and New Zealand), Principal Solutions Executive, Data Centre Solutions Executive, Senior Systems Engineer, Systems Engineer / Solutions Consultant",
       period: "December 2017 - October 2025",
       description: "Various roles across Federal/Defence, Public, Named Enterprise Accounts, Acquisition, Utilities, Higher Education, Enterprise, Healthcare.",
@@ -32,7 +32,7 @@ export const profileData = {
     },
     {
       company: "Institute for Molecular Bioscience, The University of Queensland",
-      logo: "https://logo.clearbit.com/uq.edu.au",
+      logo: "https://logo.clearbit.com/uq.edu.au?size=128",
       role: "Senior IT Manager, Service Delivery Manager, Desktop Support Officer",
       period: "February 2009 - December 2017",
       description: "Managed IT services and support.",
@@ -44,7 +44,7 @@ export const profileData = {
     },
     {
       company: "IBM",
-      logo: "https://logo.clearbit.com/ibm.com",
+      logo: "https://logo.clearbit.com/ibm.com?size=128",
       role: "Senior Technical Support Officer, Customer Relations Manager, Technical Support Officer",
       period: "June 2006 - February 2009",
       description: "Technical support and customer relations.",

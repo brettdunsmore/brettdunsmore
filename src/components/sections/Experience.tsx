@@ -1,7 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Building2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { profileData } from '@/data/resume';
+import { cn } from '@/lib/utils';
+interface CompanyLogoProps {
+  src: string;
+  alt: string;
+  company: string;
+}
+const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
+  const [error, setError] = useState(false);
+  return (
+    <div className="shrink-0 w-12 h-12 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-colors">
+      {!error ? (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          crossOrigin="anonymous"
+          onError={() => setError(true)}
+          className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+        />
+      ) : (
+        <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
+          <Building2 className="w-6 h-6" />
+        </div>
+      )}
+    </div>
+  );
+};
 export function Experience() {
   return (
     <section id="experience" className="py-24 bg-muted/10 scroll-mt-24">
@@ -24,13 +52,11 @@ export function Experience() {
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
                       <div className="flex items-start gap-5">
-                        <div className="shrink-0 w-14 h-14 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-2 shadow-sm group-hover:border-blue-500/30 transition-colors">
-                          <img
-                            src={exp.logo}
-                            alt={`${exp.company} logo`}
-                            className="w-full h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                          />
-                        </div>
+                        <CompanyLogo 
+                          src={exp.logo} 
+                          alt={`${exp.company} logo`} 
+                          company={exp.company} 
+                        />
                         <div className="space-y-1.5 pt-1">
                           <CardTitle className="text-2xl font-bold text-foreground">
                             {exp.company}
