@@ -1,6 +1,8 @@
 import React from 'react';
 import { Linkedin, Mail, ArrowUp, Phone } from 'lucide-react';
 import { profileData } from '@/data/resume';
+import { ContactForm } from '@/components/ContactForm';
+import { CVDownloadButton } from '@/components/CVDownloadButton';
 export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
@@ -32,14 +34,21 @@ export function Footer() {
               <Linkedin className="w-5 h-5" />
               <span className="text-sm font-medium hidden sm:inline">LinkedIn</span>
             </a>
-            <a
-              href={`mailto:${profileData.contact.email}`}
-              className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
-              aria-label="Send Email"
-            >
-              <Mail className="w-5 h-5" />
-              <span className="text-sm font-medium hidden sm:inline">Email</span>
-            </a>
+            <ContactForm 
+              trigger={
+                <button
+                  className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
+                  aria-label="Send Inquiry"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm font-medium hidden sm:inline">Inquiry</span>
+                </button>
+              }
+            />
+            <CVDownloadButton 
+              variant="ghost" 
+              className="h-auto p-0 text-muted-foreground hover:text-blue-600 font-medium" 
+            />
           </div>
           <button
             onClick={scrollToTop}

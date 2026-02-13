@@ -3,6 +3,7 @@ import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import {
   Sheet,
   SheetContent,
@@ -35,6 +36,15 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  
+  const activeSection = useScrollSpy([
+    'about',
+    'experience',
+    'linkedin-activity',
+    'presentations',
+    'contact'
+  ]);
+
   const rafIdRef = useRef<number>(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -86,7 +96,10 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background"
+                className={cn(
+                  "text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
+                  activeSection === link.href.replace('#', '') ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                )}
               >
                 {link.name}
               </a>

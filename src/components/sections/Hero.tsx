@@ -3,6 +3,8 @@ import { motion, Variants } from 'framer-motion';
 import { User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
+import { ContactForm } from '@/components/ContactForm';
+import { CVDownloadButton } from '@/components/CVDownloadButton';
 export function Hero() {
   const [imageError, setImageError] = useState(false);
   const containerVariants: Variants = {
@@ -105,9 +107,18 @@ export function Hero() {
             <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg hover:shadow-blue-500/20 bg-blue-600 hover:bg-blue-700 transition-all" asChild>
               <a href="#experience">View Professional History</a>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-blue-200 hover:bg-blue-50 dark:border-blue-900/50 dark:hover:bg-blue-900/20 transition-all" asChild>
-              <a href={`mailto:${profileData.contact.email}`}>Get in touch</a>
-            </Button>
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
+              <ContactForm 
+                trigger={
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-blue-200 hover:bg-blue-50 dark:border-blue-900/50 dark:hover:bg-blue-900/20 transition-all">
+                    Get in touch
+                  </Button>
+                }
+              />
+              <CVDownloadButton 
+                className="h-12 px-8 text-base border-blue-200 dark:border-blue-900/50"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
