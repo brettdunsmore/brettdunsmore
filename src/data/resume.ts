@@ -58,5 +58,48 @@ export const profileData = {
     "Business Development",
     "Microsoft Azure Fundamentals",
     "English (Native or Bilingual)"
+  ],
+  linkedinPosts: [
+    {
+      title: "The Future of AI at the Edge",
+      snippet: "Exploring how distributed computing is revolutionizing AI latency and privacy for global enterprises. The shift from centralized to decentralized inference is no longer optional...",
+      date: "2 weeks ago",
+      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      link: "https://www.linkedin.com/in/dunsmorebrett/"
+    },
+    {
+      title: "Zero Trust: Beyond the Hype",
+      snippet: "Securing the modern perimeter requires more than just VPN replacements. It's about identity, context, and continuous validation in an increasingly fragmented digital world...",
+      date: "1 month ago",
+      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+      link: "https://www.linkedin.com/in/dunsmorebrett/"
+    },
+    {
+      title: "Building Resilient Infrastructure",
+      snippet: "Reflecting on my time at Dell Technologies and the evolution of the data center. Resiliency isn't just about hardware; it's about the orchestration of people and process...",
+      date: "2 months ago",
+      imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800",
+      link: "https://www.linkedin.com/in/dunsmorebrett/"
+    }
+  ],
+  presentations: [
+    {
+      title: "THETA 2025: Higher Ed Digital Transformation",
+      event: "THETA Conference",
+      videoId: "4Vt7Q0vz5Y0",
+      videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
+    },
+    {
+      title: "6D.ai & The Spatial Web",
+      event: "Emerging Tech Showcase",
+      videoId: "SmZTZ2SzWLc",
+      videoUrl: "https://youtu.be/SmZTZ2SzWLc"
+    },
+    {
+      title: "CIO Strategy Summit",
+      event: "Executive Leadership Series",
+      videoId: "-kG6sgroouA",
+      videoUrl: "https://youtu.be/-kG6sgroouA"
+    }
   ]
 };

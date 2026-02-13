@@ -5,6 +5,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Experience } from '@/components/sections/Experience';
 import { SkillsAndEducation } from '@/components/sections/SkillsAndEducation';
+import { LinkedInActivity } from '@/components/sections/LinkedInActivity';
+import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
@@ -14,6 +16,8 @@ export function HomePage() {
         <Hero />
         <Experience />
         <SkillsAndEducation />
+        <LinkedInActivity />
+        <Presentations />
       </main>
       <Footer />
       <Toaster richColors closeButton />
