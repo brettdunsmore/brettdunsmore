@@ -44,7 +44,7 @@ export function Experience() {
                 key={`exp-${exp.company}-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
                 <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
@@ -88,10 +88,12 @@ export function Experience() {
                           Career Progression & Key Roles
                         </p>
                         <div className="relative ml-2">
+                          {/* Vertical timeline line */}
                           <div className="absolute left-0 top-1.5 bottom-1.5 w-[2px] bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-blue-500/10 rounded-full" />
                           <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
                               <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm group/item">
+                                {/* Dot indicator */}
                                 <div className="absolute left-0 top-[0.6rem] -translate-x-1/2 h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
                                 <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}

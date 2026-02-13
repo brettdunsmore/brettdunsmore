@@ -28,7 +28,7 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
     href="#top"
     aria-label="Brett Dunsmore - Home"
     className={cn(
-      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md ring-offset-background",
+      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md ring-offset-background px-1",
       className
     )}
     onClick={(e) => {
@@ -64,7 +64,7 @@ export function Navbar() {
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
     if (elem) {
-      const offset = 80;
+      const offset = 100; // Increased offset for better visual alignment
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = elem.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -134,8 +134,8 @@ export function Navbar() {
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
                       className={cn(
-                        "text-lg font-semibold transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm",
-                        activeSection === link.id ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                        "text-lg font-semibold transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-2",
+                        activeSection === link.id ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20" : "text-muted-foreground hover:text-foreground"
                       )}
                     >
                       {link.name}
