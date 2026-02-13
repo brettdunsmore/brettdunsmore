@@ -104,30 +104,50 @@ export const profileData: ProfileData = {
   education: [],
   skills: [
     "Cybersecurity",
+    "Web Services",
     "Edge Computing",
+    "Network",
+    "AI",
+    "AI - Inference",
+    "AI - Training",
+    "NVIDIA AI Enterprise",
     "Generative AI",
+    "Vectorisation",
+    "Quantisation",
+    "Data Workflows and Pipelines",
+    "Public Sector Procurement",
     "Public Sector Strategy",
+    "Defence Technologies",
     "Technical Enablement",
+    "Leadership",
+    "Sales GTM",
+    "Sales Strategy",
+    "Sales Forecasting",
+    "Prople Management",
     "Data Centre Infrastructure",
+    "Lifecycle Management",
     "Digital Transformation"
+    "Workforce Transformation",
+    "High-Performance Computing",
+    "Hierarchical File Systems",
   ],
   linkedinPosts: [],
   presentations: [
     {
       title: "The Perfect Research Cloud, by Researchers.",
-      event: "THETA Conference",
+      event: "THETA Conference - 2025",
       videoId: "4Vt7Q0vz5Y0",
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
     },
     {
       title: "Unlock the Power of Data with AI",
-      event: "Dell Technologies, NVIDIA, AMD",
+      event: "Dell Technologies, NVIDIA, AMD - 2024",
       videoId: "S5ZZAT2GqQQ",
       videoUrl: "https://youtu.be/S5ZZAT2GqQQ"
     },
     {
       title: "6D.ai - Standouts Panel",
-      event: "Emerging Tech Showcase",
+      event: "Emerging Tech Showcase - 2024",
       videoId: "SmZTZ2SzWLc",
       videoUrl: "https://youtu.be/SmZTZ2SzWLc"
     }
