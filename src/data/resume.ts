@@ -130,8 +130,8 @@ export const profileData: ProfileData = {
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
     },
     {
-      title: "The Connectivity Cloud: Modern Security & Performance",
-      event: "Cloudflare Featured Presentation",
+      title: "Unlock the Power of Data with AI",
+      event: "Dell Technologies, NVIDIA, AMD",
       videoId: "S5ZZAT2GqQQ",
       videoUrl: "https://youtu.be/S5ZZAT2GqQQ"
     },
