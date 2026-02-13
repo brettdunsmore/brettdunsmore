@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-xl font-bold tracking-tight">Brett Dunsmore</h3>
             <p className="text-sm text-muted-foreground font-medium">
-              Senior Named Account Executive
+              {profileData.title}
             </p>
             <p className="text-xs text-muted-foreground/60 pt-2">
               © {new Date().getFullYear()} All rights reserved.
