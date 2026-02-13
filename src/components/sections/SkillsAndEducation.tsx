@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { profileData } from '@/data/resume';
+import { cn } from '@/lib/utils';
 export function SkillsAndEducation() {
   const hasEducation = profileData.education && profileData.education.length > 0;
   const containerVariants = {
