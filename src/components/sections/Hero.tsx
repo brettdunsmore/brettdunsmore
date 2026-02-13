@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
 export function Hero() {
   return (
-    <section id="about" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section id="about" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 bg-gradient-mesh opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <motion.div
@@ -15,9 +15,12 @@ export function Hero() {
           <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest uppercase bg-blue-100 text-blue-700 rounded-full dark:bg-blue-900/30 dark:text-blue-400">
             Available for new opportunities
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Hi, I'm <span className="text-blue-600">Brett</span>.
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
+            Hi, I'm Brett Dunsmore<span className="text-blue-600">.</span>
           </h1>
+          <h2 className="text-2xl md:text-3xl font-medium text-foreground/80 mb-6 tracking-tight">
+            {profileData.title}
+          </h2>
           <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             {profileData.summary}
           </p>
