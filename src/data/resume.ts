@@ -60,7 +60,7 @@ export const profileData: ProfileData = {
       company: "Cloudflare",
       logo: "https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png",
       period: "October 2024 - Present",
-      description: "Accelerating digital transformation and security posture for Public Sector and Higher Education sectors across Australia and New Zealand.",
+      description: "Public Sector, Queensland and Northern Territory",
       responsibilities: [
         "Senior Named Account Executive"
       ]
