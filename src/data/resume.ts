@@ -60,7 +60,7 @@ export const profileData: ProfileData = {
       company: "Cloudflare",
       logo: "https://logo.clearbit.com/cloudflare.com?size=64",
       period: "October 2024 - Present",
-      description: "Senior Named Account Executive, Public Sector and Named Higher Education (QLD/NT).",
+      description: "Public Sector and Higher Education",
       responsibilities: [
         "Senior Named Account Executive, Public Sector"
       ]
