@@ -69,7 +69,7 @@ export const profileData: ProfileData = {
       company: "Dell Technologies",
       logo: "https://logo.clearbit.com/dell.com?size=64",
       period: "December 2017 - October 2025",
-      description: "Defence, Federal and Public Sector, Higher Education, Large Enterprise, and Utilities.",
+      description: "Federal and Public Sector, Defence, Large Enterprise and Higher Education",
       responsibilities: [
         "AI solutions strategy for Australia and New Zealand (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
