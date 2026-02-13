@@ -58,7 +58,7 @@ export const profileData: ProfileData = {
   experience: [
     {
       company: "Cloudflare",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png",
+      logo: "https://logo.clearbit.com/cloudflare.com",
       period: "October 2024 - Present",
       description: "Public Sector, Queensland and Northern Territory",
       responsibilities: [
@@ -67,7 +67,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "Dell Technologies",
-      logo: "https://www.femmehub.com/wp-content/uploads/2023/01/Dell.png",
+      logo: "https://logo.clearbit.com/dell.com",
       period: "December 2017 - October 2024",
       description: "Defence, Federal Government, Higher Education, and Large Enterprise",
       responsibilities: [
@@ -90,7 +90,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "IBM",
-      logo: "https://download.logo.wine/logo/IBM/IBM-Logo.wine.png",
+      logo: "https://logo.clearbit.com/ibm.com",
       period: "June 2006 - February 2009",
       description: "L3/4 Technical Support, Quality Assurance and Customer Experience",
       responsibilities: [

@@ -13,13 +13,10 @@ const VideoThumbnail = ({ videoId, title }: VideoThumbnailProps) => {
   const [error, setError] = useState(false);
   const handleImageError = () => {
     if (imgSrc.includes('maxresdefault')) {
-      // Fallback to high quality if maxres is unavailable
       setImgSrc(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
     } else if (imgSrc.includes('hqdefault')) {
-      // Fallback to medium quality
       setImgSrc(`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
     } else {
-      // Final fallback to error state
       setError(true);
     }
   };
@@ -32,17 +29,18 @@ const VideoThumbnail = ({ videoId, title }: VideoThumbnailProps) => {
           loading="lazy"
           decoding="async"
           onError={handleImageError}
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-in-out"
         />
       ) : (
         <Youtube className="w-12 h-12 text-muted-foreground/30" />
       )}
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out pointer-events-none">
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out pointer-events-none">
         <motion.div
           className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-white shadow-2xl"
           initial={{ scale: 0.8, opacity: 0 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.15, rotate: 5 }}
           animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15 }}
         >
           <Play className="w-8 h-8 fill-current translate-x-0.5" />
         </motion.div>
@@ -68,40 +66,45 @@ export function Presentations() {
             Showcasing expertise through industry keynotes, technical deep-dives, and strategic discussions.
           </p>
         </div>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            {profileData.presentations.map((pres, idx) => (
-              <motion.div
-                key={pres.videoId}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="flex"
-              >
-                <Card className="flex flex-col w-full overflow-hidden border-border/40 hover:border-red-500/30 transition-all group shadow-sm hover:shadow-xl bg-card">
-                  <VideoThumbnail videoId={pres.videoId} title={pres.title} />
-                  <CardContent className="pt-6 flex-grow flex flex-col space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {profileData.presentations.map((pres, idx) => (
+            <motion.div
+              key={pres.videoId}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="flex"
+            >
+              <Card className="flex flex-col w-full overflow-hidden border-border/40 hover:border-red-500/30 transition-all group shadow-sm hover:shadow-xl bg-card">
+                <VideoThumbnail videoId={pres.videoId} title={pres.title} />
+                <CardContent className="pt-6 flex-grow flex flex-col justify-between">
+                  <div className="space-y-2">
                     <p className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-widest">
                       {pres.event}
                     </p>
                     <h3 className="text-xl font-bold leading-tight group-hover:text-red-600 transition-colors line-clamp-2">
                       {pres.title}
                     </h3>
-                  </CardContent>
-                  <CardFooter className="pt-0 pb-6">
-                    <Button variant="outline" size="lg" className="w-full gap-2 rounded-full border-red-200 dark:border-red-900/50 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" asChild>
-                      <a href={pres.videoUrl} target="_blank" rel="noopener noreferrer">
-                        <Youtube className="w-5 h-5 text-red-600" />
-                        Watch on YouTube
-                        <ExternalLink className="w-4 h-4 ml-auto opacity-50" />
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="pt-4 pb-6 mt-auto">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full gap-2 rounded-full border-red-200 dark:border-red-900/50 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors group-hover:bg-red-50" 
+                    asChild
+                  >
+                    <a href={pres.videoUrl} target="_blank" rel="noopener noreferrer">
+                      <Youtube className="w-5 h-5 text-red-600" />
+                      Watch on YouTube
+                      <ExternalLink className="w-4 h-4 ml-auto opacity-50" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
