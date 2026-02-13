@@ -18,7 +18,7 @@ export function Footer() {
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             <a
-              href={`tel:+${profileData.contact.mobile}`}
+              href={`tel:${profileData.contact.mobile}`}
               className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
               aria-label="Call Brett Dunsmore"
             >

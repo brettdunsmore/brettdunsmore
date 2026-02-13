@@ -53,7 +53,7 @@ export const profileData: ProfileData = {
   contact: {
     email: "me@brettdunsmore.com",
     linkedin: "https://www.linkedin.com/in/dunsmorebrett",
-    mobile: "61429209460",
+    mobile: "+61429209460",
   },
   experience: [
     {
