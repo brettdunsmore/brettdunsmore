@@ -58,7 +58,7 @@ export const profileData: ProfileData = {
   experience: [
     {
       company: "Cloudflare",
-      logo: "https://logo.clearbit.com/cloudflare.com?size=64",
+      logo: "https://logo.clearbit.com/cloudflare.com",
       period: "October 2024 - Present",
       description: "Public Sector and Higher Education",
       responsibilities: [
@@ -67,7 +67,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "Dell Technologies",
-      logo: "https://logo.clearbit.com/dell.com?size=64",
+      logo: "https://logo.clearbit.com/dell.com",
       period: "December 2017 - October 2024",
       description: "Defence, Federal, Higher Education and Large Enterprise",
       responsibilities: [
@@ -79,7 +79,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "The University of Queensland (IMB)",
-      logo: "https://logo.clearbit.com/uq.edu.au?size=64",
+      logo: "https://logo.clearbit.com/uq.edu.au",
       period: "February 2009 - December 2017",
       description: "Supporting Life Sciences Research and Drug Discovery",
       responsibilities: [
@@ -90,7 +90,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "IBM",
-      logo: "https://logo.clearbit.com/ibm.com?size=64",
+      logo: "https://logo.clearbit.com/ibm.com",
       period: "June 2006 - February 2009",
       description: "L3/4 Technical Support, Training and Quality Assurance - APAC",
       responsibilities: [
