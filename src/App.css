@@ -1,10 +1,4 @@
-#root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
-}
-
+/* Optimized styles for transitions and animations */
 .logo {
 	height: 6em;
 	padding: 1.5em;
@@ -17,10 +11,6 @@
 .logo.react:hover {
 	filter: drop-shadow(0 0 2em #61dafbaa);
 }
-.logo.cloudflare:hover {
-	filter: drop-shadow(0 0 2em #f6821faa);
-}
-
 @keyframes logo-spin {
 	from {
 		transform: rotate(0deg);
@@ -29,17 +19,14 @@
 		transform: rotate(360deg);
 	}
 }
-
 @media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
+	.logo-spin {
 		animation: logo-spin infinite 20s linear;
 	}
 }
-
-.card {
-	padding: 2em;
+.card-hover-effect {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.read-the-docs {
-	color: #888;
+.card-hover-effect:hover {
+	transform: translateY(-4px);
 }

@@ -17,26 +17,26 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
-            <a 
-              href={`tel:${profileData.contact.mobile}`} 
+            <a
+              href={`tel:+${profileData.contact.mobile}`}
               className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
               aria-label="Call Brett Dunsmore"
             >
               <Phone className="w-5 h-5" />
               <span className="text-sm font-medium hidden sm:inline">Call</span>
             </a>
-            <a 
-              href={profileData.contact.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={profileData.contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-5 h-5" />
               <span className="text-sm font-medium hidden sm:inline">LinkedIn</span>
             </a>
-            <a 
-              href={`mailto:${profileData.contact.email}`} 
+            <a
+              href={`mailto:${profileData.contact.email}`}
               className="flex items-center gap-2 text-muted-foreground hover:text-blue-600 transition-colors"
               aria-label="Send Email"
             >
