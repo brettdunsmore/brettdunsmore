@@ -18,7 +18,11 @@ const NAV_LINKS = [
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
   <a
     href="#top"
-    className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md", className)}
+    aria-label="Brett Dunsmore - Home"
+    className={cn(
+      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md",
+      className
+    )}
     onClick={(e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -49,9 +53,9 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
         isScrolled
-          ? "bg-background/90 backdrop-blur-lg border-b py-4 shadow-sm"
+          ? "bg-background/80 backdrop-blur-xl border-b py-4 shadow-sm"
           : "bg-transparent py-6"
       )}
     >
@@ -80,8 +84,8 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label="Open menu"
+                className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                aria-label="Open navigation menu"
               >
                 <Menu className="h-6 w-6" />
               </Button>
@@ -106,7 +110,11 @@ export function Navbar() {
                   ))}
                 </nav>
                 <div className="pt-8 border-t border-border/50 mt-auto pb-4">
-                  <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild onClick={closeMenu}>
+                  <Button
+                    className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white"
+                    asChild
+                    onClick={closeMenu}
+                  >
                     <a href="#contact">Get in Touch</a>
                   </Button>
                 </div>

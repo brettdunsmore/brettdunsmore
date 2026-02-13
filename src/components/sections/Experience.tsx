@@ -11,7 +11,7 @@ interface CompanyLogoProps {
 const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
+    <div className="shrink-0 w-12 h-12 min-h-[48px] rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
       {!error ? (
         <img
           src={src}
@@ -92,10 +92,10 @@ export function Experience() {
                           <div className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-blue-500/20 rounded-full" />
                           <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
-                              <li key={i} className="relative pl-8 flex items-start text-sm group/item">
-                                {/* Role Marker Node */}
-                                <div className="absolute left-0 top-1.5 -translate-x-[40%] h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
-                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
+                              <li key={i} className="relative pl-8 flex items-center text-sm group/item">
+                                {/* Role Marker Node - Vertically centered with line-height */}
+                                <div className="absolute left-0 top-[0.625rem] -translate-x-[40%] h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
+                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200 py-0.5">
                                   {resp}
                                 </span>
                               </li>
