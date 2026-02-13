@@ -21,7 +21,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tighter">
-          Brett<span className="text-blue-600">.</span>
+          Brett Dunsmore<span className="text-blue-600">.</span>
         </a>
         <div className="flex gap-8">
           {navLinks.map((link) => (
