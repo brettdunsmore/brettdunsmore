@@ -92,7 +92,7 @@ export const profileData: ProfileData = {
       company: "IBM",
       logo: "https://download.logo.wine/logo/IBM/IBM-Logo.wine.png",
       period: "June 2006 - February 2009",
-      description: "Delivering mission-critical technical architecture support and quality assurance for the APAC enterprise region.",
+      description: "L3/4 Technical Support, Quality Assurance and Customer Experience",
       responsibilities: [
         "Senior Technical Support (2008-2009)",
         "Customer Relations Manager (2007-2008)",
