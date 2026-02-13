@@ -7,9 +7,10 @@ import { Experience } from '@/components/sections/Experience';
 import { SkillsAndEducation } from '@/components/sections/SkillsAndEducation';
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-background font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-background font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
+      <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <Hero />
         <Experience />
         <SkillsAndEducation />

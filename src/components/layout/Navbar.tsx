@@ -1,13 +1,19 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
-
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const rafIdRef = React.useRef<number>(0);
-  const [isMobileOpen, setIsMobileOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
   React.useEffect(() => {
     const handleScroll = () => {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
@@ -20,23 +26,15 @@ export function Navbar() {
       window.removeEventListener('scroll', handleScroll);
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
-}, []);
-
-React.useEffect(() => {
-  if (isMobileOpen) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'unset';
-  }
-  return () => {
-    document.body.style.overflow = 'unset';
-  };
-}, [isMobileOpen]);
+  }, []);
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
   return (
     <nav
       className={cn(
@@ -64,64 +62,45 @@ React.useEffect(() => {
           <ThemeToggle />
         </div>
         {/* Mobile Navigation */}
-        <div className="flex md:hidden items-center gap-4">
+        <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="h-10 w-10"
-            onClick={() => setIsMobileOpen(true)}
-          >
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle menu</span>
-          </Button>
-        </div>
-
-        {/* Mobile Menu Overlay */}
-        {isMobileOpen && (
-          <>
-            <div
-              className="fixed inset-0 z-[49] bg-black/40 md:hidden"
-              onClick={() => setIsMobileOpen(false)}
-            />
-            <div className={cn(
-              "fixed top-0 right-0 z-50 w-80 h-full bg-background p-8 shadow-2xl md:hidden transition-transform duration-300",
-              isMobileOpen ? "translate-x-0" : "translate-x-full"
-            )}>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl font-bold tracking-tighter">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-10 w-10"
+                aria-label="Toggle menu"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader className="text-left">
+                <SheetTitle className="text-xl font-bold tracking-tighter">
                   Brett Dunsmore<span className="text-blue-600">.</span>
-                </h2>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
-              <nav className="flex flex-col gap-6">
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-6 mt-12">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={handleLinkClick}
                   >
                     {link.name}
                   </a>
                 ))}
                 <Button className="mt-4 w-full" asChild>
-                  <a href="#contact" onClick={() => setIsMobileOpen(false)}>
+                  <a href="#contact" onClick={handleLinkClick}>
                     Get in Touch
                   </a>
                 </Button>
               </nav>
-            </div>
-          </>
-        )}
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );
