@@ -8,17 +8,19 @@ import { LinkedInActivity } from '@/components/sections/LinkedInActivity';
 import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
   return (
-    <div className="min-h-screen bg-background font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
+    <div className="min-h-screen bg-background font-sans selection:bg-blue-600 selection:text-white flex flex-col">
+      {/* Skip to top anchor for programmatic and keyboard navigation */}
       <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
-      <main className="flex-grow pb-12">
+      <main id="main-content" className="flex-grow">
         <Hero />
         <Experience />
         <LinkedInActivity />
         <Presentations />
       </main>
       <Footer />
-      <Toaster richColors closeButton />
+      {/* Global toast notifications */}
+      <Toaster richColors closeButton position="bottom-right" />
     </div>
   );
 }

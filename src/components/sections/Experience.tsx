@@ -11,7 +11,7 @@ interface CompanyLogoProps {
 const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-colors">
+    <div className="shrink-0 w-12 h-12 rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
       {!error ? (
         <img
           src={src}
@@ -19,7 +19,7 @@ const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
           loading="lazy"
           decoding="async"
           onError={() => setError(true)}
-          className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 will-change-transform"
+          className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 will-change-transform"
         />
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
@@ -41,11 +41,11 @@ export function Experience() {
           <div className="space-y-12">
             {profileData.experience.map((exp, index) => (
               <motion.div
-                key={exp.company + index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                key={`${exp.company}-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
                 <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all overflow-hidden bg-card">
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
@@ -72,11 +72,11 @@ export function Experience() {
                   <CardContent className="pt-8 pb-10 space-y-8">
                     {/* Organizational Context / Focus Area */}
                     {exp.description && (
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Focus & Regional Scope
                         </p>
-                        <p className="text-base text-foreground font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
+                        <p className="text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
                           {exp.description}
                         </p>
                       </div>
@@ -88,13 +88,14 @@ export function Experience() {
                           Career Progression & Key Roles
                         </p>
                         <div className="relative ml-1.5">
-                          {/* Timeline Line */}
-                          <div className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-blue-500/40 rounded-full" />
-                          <ul className="relative grid gap-4">
+                          {/* Central Timeline Line */}
+                          <div className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-blue-500/20 rounded-full" />
+                          <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
                               <li key={i} className="relative pl-8 flex items-start text-sm group/item">
-                                <div className="absolute left-0 top-1.5 -translate-x-[40%] h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
-                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors">
+                                {/* Role Marker Node */}
+                                <div className="absolute left-0 top-1.5 -translate-x-[40%] h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
+                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}
                                 </span>
                               </li>
