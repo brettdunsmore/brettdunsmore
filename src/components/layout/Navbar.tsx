@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -50,6 +50,15 @@ export function Navbar() {
     };
   }, []);
   const closeMenu = () => setOpen(false);
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+    closeMenu();
+  };
   return (
     <nav
       className={cn(
@@ -68,6 +77,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background"
               >
                 {link.name}
@@ -92,9 +102,11 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] flex flex-col p-6">
               <SheetHeader className="text-left border-b border-border/50 pb-6 mb-6">
-                <SheetTitle>
-                  <Brand onClick={closeMenu} />
-                </SheetTitle>
+                <div className="flex items-center justify-between">
+                  <SheetTitle>
+                    <Brand onClick={closeMenu} />
+                  </SheetTitle>
+                </div>
               </SheetHeader>
               <div className="flex flex-col h-full">
                 <nav className="flex flex-col gap-4 flex-1">
@@ -102,7 +114,7 @@ export function Navbar() {
                     <a
                       key={link.name}
                       href={link.href}
-                      onClick={closeMenu}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       className="text-lg font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm"
                     >
                       {link.name}
@@ -115,7 +127,7 @@ export function Navbar() {
                     asChild
                     onClick={closeMenu}
                   >
-                    <a href="#contact">Get in Touch</a>
+                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Get in Touch</a>
                   </Button>
                 </div>
               </div>

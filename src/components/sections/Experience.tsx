@@ -10,7 +10,7 @@ interface CompanyLogoProps {
 const CompanyLogo = ({ src, alt }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 min-h-[48px] rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
+    <div className="shrink-0 w-12 h-12 min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
       {!error ? (
         <img
           src={src}
@@ -48,20 +48,20 @@ export function Experience() {
               >
                 <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
-                      <div className="flex items-start gap-5">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                      <div className="flex items-center gap-5">
                         <CompanyLogo
                           src={exp.logo}
                           alt={`${exp.company} logo`}
                         />
-                        <div className="space-y-1.5 pt-1">
+                        <div className="space-y-1">
                           <CardTitle className="text-2xl font-bold text-foreground">
                             {exp.company}
                           </CardTitle>
                         </div>
                       </div>
-                      <div className="shrink-0 sm:pt-1">
-                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap min-w-[140px] justify-center">
+                      <div className="shrink-0">
+                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap min-w-[140px] justify-center shadow-sm">
                           {exp.period}
                         </span>
                       </div>
