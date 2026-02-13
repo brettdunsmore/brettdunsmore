@@ -17,7 +17,6 @@ const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
           src={src}
           alt={alt}
           loading={isPriority ? "eager" : "lazy"}
-          fetchPriority={isPriority ? "high" : "low"}
           decoding="async"
           onError={() => setError(true)}
           className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"

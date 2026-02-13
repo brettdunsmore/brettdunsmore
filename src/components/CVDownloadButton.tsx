@@ -55,7 +55,7 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     const summaryText = profileData.summaryParagraphs.join('\n\n');
     const splitSummary = doc.splitTextToSize(summaryText, maxTextWidth);
     doc.text(splitSummary, margin, y);
-    y += (splitSummary.length * 5) + 12;
+    y += (splitSummary.length * 5) + 15;
     // Experience
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
@@ -93,7 +93,7 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     });
     // Skills
     checkPageOverflow(25);
-    y += 4;
+    y += 10;
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(15, 23, 42);
