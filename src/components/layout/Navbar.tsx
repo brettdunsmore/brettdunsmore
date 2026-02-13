@@ -14,6 +14,7 @@ import {
 const NAV_LINKS = [
   { name: 'About', href: '#about', id: 'about' },
   { name: 'Experience', href: '#experience', id: 'experience' },
+  { name: 'Presentations', href: '#presentations', id: 'presentations' },
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 const SCROLL_SPY_SECTIONS = [
@@ -95,7 +96,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
-                  "text-sm font-semibold transition-all duration-300 delay-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
+                  "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
                   activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -121,11 +122,9 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] flex flex-col p-6">
               <SheetHeader className="text-left border-b border-border/50 pb-6 mb-6">
-                <div className="flex items-center justify-between">
-                  <SheetTitle>
-                    <Brand onClick={closeMenu} />
-                  </SheetTitle>
-                </div>
+                <SheetTitle>
+                  <Brand onClick={closeMenu} />
+                </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col h-full">
                 <nav className="flex flex-col gap-4 flex-1">

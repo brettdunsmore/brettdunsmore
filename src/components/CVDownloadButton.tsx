@@ -23,27 +23,28 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
       }
       return false;
     };
-    // Header
+    // Header Section
     doc.setFontSize(24);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(15, 23, 42); // slate-900
     doc.text(profileData.name, margin, y);
     y += 10;
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(59, 130, 246); // blue-500
+    doc.setFontSize(13);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(37, 99, 235); // blue-600
     doc.text(profileData.title, margin, y);
     y += 10;
-    // Contact Info Bar
+    // Contact Information Bar
     doc.setFontSize(9);
-    doc.setTextColor(100, 116, 139); // slate-500
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(71, 85, 105); // slate-600
     const contactLine = `Email: ${profileData.contact.email}  |  Mobile: ${profileData.contact.mobile}  |  LinkedIn: ${profileData.contact.linkedin.replace('https://www.', '')}`;
     doc.text(contactLine, margin, y);
     y += 6;
-    doc.setDrawColor(226, 232, 240); // slate-200
+    doc.setDrawColor(203, 213, 225); // slate-300
     doc.line(margin, y, pageWidth - margin, y);
     y += 12;
-    // Summary
+    // Professional Summary Section
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(15, 23, 42);
@@ -52,11 +53,14 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(51, 65, 85); // slate-700
-    const summaryText = profileData.summaryParagraphs.join('\n\n');
-    const splitSummary = doc.splitTextToSize(summaryText, maxTextWidth);
-    doc.text(splitSummary, margin, y);
-    y += (splitSummary.length * 5) + 15;
-    // Experience
+    profileData.summaryParagraphs.forEach((para) => {
+      const splitPara = doc.splitTextToSize(para, maxTextWidth);
+      checkPageOverflow(splitPara.length * 5 + 5);
+      doc.text(splitPara, margin, y);
+      y += (splitPara.length * 5) + 6;
+    });
+    y += 4;
+    // Professional History Section
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(15, 23, 42);
@@ -70,7 +74,7 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
       doc.text(exp.company, margin, y);
       doc.setFontSize(10);
       doc.setFont("helvetica", "normal");
-      doc.setTextColor(100, 116, 139);
+      doc.setTextColor(71, 85, 105); // slate-600
       const periodWidth = doc.getTextWidth(exp.period);
       doc.text(exp.period, pageWidth - margin - periodWidth, y);
       y += 6;
@@ -78,8 +82,9 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
         doc.setFont("helvetica", "italic");
         doc.setTextColor(51, 65, 85);
         const splitDesc = doc.splitTextToSize(exp.description, maxTextWidth);
+        checkPageOverflow(splitDesc.length * 5);
         doc.text(splitDesc, margin, y);
-        y += (splitDesc.length * 5) + 2;
+        y += (splitDesc.length * 5) + 4;
       }
       doc.setFont("helvetica", "normal");
       doc.setTextColor(51, 65, 85);
@@ -89,11 +94,10 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
         doc.text(splitResp, margin + 5, y);
         y += (splitResp.length * 5);
       });
-      y += 8;
+      y += 10;
     });
-    // Skills
+    // Core Competencies Section
     checkPageOverflow(25);
-    y += 10;
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.setTextColor(15, 23, 42);
@@ -102,7 +106,7 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.setTextColor(51, 65, 85);
-    const skillsText = profileData.skills.join("  •  ");
+    const skillsText = profileData.skills.join("  |  ");
     const splitSkills = doc.splitTextToSize(skillsText, maxTextWidth);
     doc.text(splitSkills, margin, y);
     doc.save(`${profileData.name.replace(/\s+/g, '_')}_Resume.pdf`);

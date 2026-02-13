@@ -60,7 +60,7 @@ export const profileData: ProfileData = {
       company: "Cloudflare",
       logo: "https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png",
       period: "October 2024 - Present",
-      description: "Driving security and performance for Public Sector and Higher Education sectors.",
+      description: "Accelerating digital transformation and security posture for Public Sector and Higher Education sectors across Australia and New Zealand.",
       responsibilities: [
         "Senior Named Account Executive"
       ]
@@ -69,7 +69,7 @@ export const profileData: ProfileData = {
       company: "Dell Technologies",
       logo: "https://www.femmehub.com/wp-content/uploads/2023/01/Dell.png",
       period: "December 2017 - October 2024",
-      description: "Delivering infrastructure excellence for Defence, Federal, Higher Education, and Large Enterprise accounts.",
+      description: "Optimising hybrid-cloud and AI-ready infrastructure for Defence, Federal Government, Higher Education, and Global Accounts.",
       responsibilities: [
         "AI Solutions Strategy for Australia and New Zealand (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
@@ -81,7 +81,7 @@ export const profileData: ProfileData = {
       company: "The University of Queensland (IMB)",
       logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
       period: "February 2009 - December 2017",
-      description: "Empowering Life Sciences Research and Drug Discovery through technological innovation.",
+      description: "Architecting high-performance computing and data management strategies to empower Life Sciences research and discovery.",
       responsibilities: [
         "Senior IT Manager (2012-2017)",
         "Service Delivery Manager (2010-2012)",
@@ -92,7 +92,7 @@ export const profileData: ProfileData = {
       company: "IBM",
       logo: "https://download.logo.wine/logo/IBM/IBM-Logo.wine.png",
       period: "June 2006 - February 2009",
-      description: "L3/4 Technical Support, Training, and Quality Assurance for the APAC region.",
+      description: "Delivering mission-critical technical architecture support and quality assurance for the APAC enterprise region.",
       responsibilities: [
         "Senior Technical Support (2008-2009)",
         "Customer Relations Manager (2007-2008)",
