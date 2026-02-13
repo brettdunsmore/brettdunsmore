@@ -10,8 +10,8 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3
+        staggerChildren: 0.2,
+        delayChildren: 0.4
       }
     }
   };
@@ -20,8 +20,8 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.12,
+        delayChildren: 0.3
       }
     }
   };
@@ -30,7 +30,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }
+      transition: { duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }
     }
   };
   const springVariants: Variants = {
@@ -48,7 +48,7 @@ export function Hero() {
   };
   return (
     <section id="about" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
-      <div className="absolute inset-0 bg-gradient-mesh opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-mesh opacity-20 dark:opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
           initial="hidden"
@@ -67,7 +67,7 @@ export function Hero() {
                   <img
                     src={profileData.avatarUrl}
                     alt={profileData.name}
-                    loading="lazy"
+                    loading="eager"
                     onError={() => setImageError(true)}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
@@ -94,7 +94,7 @@ export function Hero() {
               <motion.p
                 key={index}
                 variants={itemVariants}
-                className="leading-relaxed md:leading-8"
+                className="leading-relaxed md:leading-8 text-balance"
               >
                 {paragraph}
               </motion.p>

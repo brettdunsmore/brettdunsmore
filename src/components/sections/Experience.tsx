@@ -76,7 +76,7 @@ export function Experience() {
                   </CardHeader>
                   <CardContent className="pt-8 space-y-8">
                     <div className="space-y-2 min-h-[3rem] flex flex-col justify-center">
-                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-snug max-w-2xl text-balance">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight break-words max-w-full text-balance">
                         {exp.role}
                       </h4>
                     </div>
@@ -88,7 +88,7 @@ export function Experience() {
                         <ul className="grid gap-4 border-l-2 border-blue-500/40 pl-6 ml-1">
                           {exp.responsibilities.map((resp, i) => (
                             <li key={i} className="relative flex items-start gap-3 text-sm group/item">
-                              <div className="absolute -left-[1.575rem] top-1.5 h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
+                              <div className="absolute -left-[1.625rem] top-1 h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
                               <span className="text-muted-foreground font-medium leading-relaxed">
                                 {resp}
                               </span>
