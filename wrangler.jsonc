@@ -4,7 +4,7 @@
  */
  {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "brett-dunsmore-portf-bb5tyzzqf1j07fs1zq92o",
+	"name": "brettdunsmore",
 	"main": "worker/index.ts",
 	"compatibility_date": "2025-04-24",
 	"assets": {
