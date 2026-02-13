@@ -92,6 +92,12 @@ export const profileData = {
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
     },
     {
+      title: "The Connectivity Cloud: Modern Security & Performance",
+      event: "Cloudflare Featured Presentation",
+      videoId: "S5ZZAT2GqQQ",
+      videoUrl: "https://youtu.be/S5ZZAT2GqQQ"
+    },
+    {
       title: "6D.ai & The Spatial Web",
       event: "Emerging Tech Showcase",
       videoId: "SmZTZ2SzWLc",

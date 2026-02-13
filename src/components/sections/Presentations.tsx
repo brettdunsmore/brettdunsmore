@@ -19,8 +19,8 @@ export function Presentations() {
             Showcasing expertise through industry keynotes, technical deep-dives, and strategic discussions.
           </p>
         </div>
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {profileData.presentations.map((pres, idx) => (
               <motion.div
                 key={pres.videoId}
