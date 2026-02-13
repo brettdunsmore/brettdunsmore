@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -21,7 +21,8 @@ const Brand = () => (
   </a>
 );
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const rafIdRef = React.useRef<number>(0);
   React.useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,7 @@ export function Navbar() {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
   }, []);
+  const closeMenu = () => setOpen(false);
   return (
     <nav
       className={cn(
@@ -63,7 +65,7 @@ export function Navbar() {
         {/* Mobile Navigation */}
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -86,6 +88,7 @@ export function Navbar() {
                     <a
                       key={link.name}
                       href={link.href}
+                      onClick={closeMenu}
                       className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                     >
                       {link.name}
@@ -93,7 +96,7 @@ export function Navbar() {
                   ))}
                 </nav>
                 <div className="pt-8 border-t border-border/50 mt-auto pb-6">
-                  <Button className="w-full" asChild>
+                  <Button className="w-full" asChild onClick={closeMenu}>
                     <a href="#contact">Get in Touch</a>
                   </Button>
                 </div>

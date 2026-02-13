@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { profileData } from '@/data/resume';
 export function Experience() {
   return (
-    <section id="experience" className="py-24 bg-muted/10">
+    <section id="experience" className="py-24 bg-muted/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
