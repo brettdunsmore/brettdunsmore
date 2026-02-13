@@ -4,7 +4,6 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Experience } from '@/components/sections/Experience';
-import { SkillsAndEducation } from '@/components/sections/SkillsAndEducation';
 import { LinkedInActivity } from '@/components/sections/LinkedInActivity';
 import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
@@ -15,7 +14,6 @@ export function HomePage() {
       <main className="flex-grow">
         <Hero />
         <Experience />
-        <SkillsAndEducation />
         <LinkedInActivity />
         <Presentations />
       </main>

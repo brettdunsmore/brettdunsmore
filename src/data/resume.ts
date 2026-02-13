@@ -24,7 +24,7 @@ export const profileData = {
       period: "December 2017 - October 2025",
       description: "Various roles across Federal/Defence, Public, Named Enterprise Accounts, Acquisition, Utilities, Higher Education, Enterprise, Healthcare.",
       responsibilities: [
-        "Led AI solutions for Australia/NZ (2024-2025)",
+        "AI solutions for Australia/NZ (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
         "Data Centre Solutions Executive (2021-2022)",
         "Senior/Systems Engineer (2019-2021)"
@@ -56,33 +56,27 @@ export const profileData = {
     }
   ],
   education: [],
-  skills: [
-    "Cybersecurity",
-    "Web Services",
-    "Business Development",
-    "Microsoft Azure Fundamentals",
-    "English (Native or Bilingual)"
-  ],
+  skills: [],
   linkedinPosts: [
     {
-      title: "The Future of AI at the Edge",
-      snippet: "Exploring how distributed computing is revolutionizing AI latency and privacy for global enterprises. The shift from centralized to decentralized inference is no longer optional...",
-      date: "2 weeks ago",
-      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      title: "A New Chapter at Dell Technologies",
+      snippet: "Reflecting on a decade of growth and the incredible technological evolution I've witnessed. From traditional infrastructure to the AI-driven future, the journey has been about more than just hardware—it's about the people and processes that drive real innovation.",
+      date: "Recent",
+      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
       link: "https://www.linkedin.com/in/dunsmorebrett/"
     },
     {
-      title: "Zero Trust: Beyond the Hype",
-      snippet: "Securing the modern perimeter requires more than just VPN replacements. It's about identity, context, and continuous validation in an increasingly fragmented digital world...",
-      date: "1 month ago",
+      title: "The Hidden Risks of Shadow AI",
+      snippet: "As organizations race to adopt generative AI, many are overlooking critical security blind spots. Unmanaged AI adoption can lead to significant data leakage and compliance risks. We must balance the speed of innovation with robust governance.",
+      date: "Recent",
       imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
       link: "https://www.linkedin.com/in/dunsmorebrett/"
     },
     {
-      title: "Building Resilient Infrastructure",
-      snippet: "Reflecting on my time at Dell Technologies and the evolution of the data center. Resiliency isn't just about hardware; it's about the orchestration of people and process...",
-      date: "2 months ago",
-      imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800",
+      title: "Balancing AI Innovation with Security",
+      snippet: "Integrating a security-first mindset into edge computing and AI workflows is no longer optional. True digital transformation happens when security is treated as an enabler of innovation, not a barrier to it.",
+      date: "Recent",
+      imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
       link: "https://www.linkedin.com/in/dunsmorebrett/"
     }
   ],
