@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 /**
  * A custom hook that utilizes the IntersectionObserver API to track
- * which section of the page is currently in the viewport.
+ * which section of the page is currently in the viewport with high precision.
  */
 export function useScrollSpy(sectionIds: string[], options?: IntersectionObserverInit) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -13,41 +13,44 @@ export function useScrollSpy(sectionIds: string[], options?: IntersectionObserve
     if (observer.current) {
       observer.current.disconnect();
     }
-    // Adjust rootMargin to trigger when section is more prominent
+    // A balanced rootMargin ensures we detect sections before they hit the very top
+    // while the threshold ensures we have enough of the section visible to count it.
     const config = {
-      rootMargin: '-30% 0px -60% 0px',
-      threshold: [0, 0.1, 0.2, 0.5],
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: [0, 0.1, 0.5],
       ...options,
     };
     observer.current = new IntersectionObserver((entries) => {
-      // Find all intersecting entries
-      const intersecting = entries.filter(entry => entry.isIntersecting);
-      if (intersecting.length > 0) {
-        // If multiple sections are intersecting, pick the one closest to the top
-        // which has the smallest boundingClientRect.top (absolute value relative to viewport)
-        const closest = intersecting.reduce((prev, curr) => {
-          return Math.abs(curr.boundingClientRect.top) < Math.abs(prev.boundingClientRect.top) 
-            ? curr 
+      // Get all entries that are currently intersecting
+      const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+      if (visibleEntries.length > 0) {
+        // Find the entry that is most prominent in the defined root area
+        // We prioritize the one closest to the top of the viewport
+        const bestEntry = visibleEntries.reduce((prev, curr) => {
+          return Math.abs(curr.boundingClientRect.top) < Math.abs(prev.boundingClientRect.top)
+            ? curr
             : prev;
         });
-        setActiveId(closest.target.id);
+        if (bestEntry.target.id !== activeId) {
+          setActiveId(bestEntry.target.id);
+        }
       }
     }, config);
     elements.forEach((el) => {
       observer.current?.observe(el);
     });
-    // Initial check for 'top' state
-    const handleInitialState = () => {
-      if (window.scrollY < 100) {
-        setActiveId('about');
+    // Special handling for the very top of the page
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setActiveId(sectionIds[0] || null);
       }
     };
-    handleInitialState();
-    window.addEventListener('scroll', handleInitialState, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
     return () => {
       observer.current?.disconnect();
-      window.removeEventListener('scroll', handleInitialState);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [sectionIds, options]);
+  }, [sectionIds, options, activeId]);
   return activeId;
 }

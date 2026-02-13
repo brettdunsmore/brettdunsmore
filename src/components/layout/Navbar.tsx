@@ -17,12 +17,7 @@ const NAV_LINKS = [
   { name: 'Presentations', href: '#presentations', id: 'presentations' },
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
-const SCROLL_SPY_SECTIONS = [
-  'about',
-  'experience',
-  'presentations',
-  'contact'
-];
+const SCROLL_SPY_SECTIONS = ['about', 'experience', 'presentations', 'contact'];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
   <a
     href="#top"
@@ -64,14 +59,10 @@ export function Navbar() {
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
     if (elem) {
-      const offset = 100; // Increased offset for better visual alignment
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = elem.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      // Use scrollIntoView which respects the scroll-margin-top utility
+      elem.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
       });
     }
     closeMenu();
