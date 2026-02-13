@@ -87,10 +87,10 @@ export function Experience() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
                         </p>
-                        <ul className="grid gap-4 border-l-2 border-muted/50 pl-5 ml-1">
+                        <ul className="grid gap-4 border-l-2 border-blue-500/30 pl-6 ml-1">
                           {exp.responsibilities.map((resp, i) => (
                             <li key={i} className="relative flex items-center gap-3 text-sm">
-                              <div className="absolute -left-[1.625rem] h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500 border-2 border-card" />
+                              <div className="absolute -left-[1.8125rem] h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm" />
                               <span className="text-muted-foreground font-medium leading-relaxed">
                                 {resp}
                               </span>

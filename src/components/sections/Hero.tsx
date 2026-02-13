@@ -13,6 +13,16 @@ export function Hero() {
       }
     }
   };
+  const paragraphContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -53,7 +63,7 @@ export function Hero() {
             {profileData.title}
           </motion.h2>
           <motion.div
-            variants={itemVariants}
+            variants={paragraphContainerVariants}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto space-y-6 text-balance text-left md:text-center"
           >
             {profileData.summaryParagraphs.map((paragraph, index) => (
