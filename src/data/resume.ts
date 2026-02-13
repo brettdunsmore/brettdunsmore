@@ -4,7 +4,7 @@ export const profileData = {
   summaryParagraphs: [
     "At Cloudflare, I help organisations protect their critical websites, APIs, and internal networks from cyber threats, securely connect users and devices to applications worldwide, and support application development teams build scalable, high-performance applications enhanced by AI workers at the network edge.",
     "My background combines deep technical expertise with a focus on people, process and technology, honed in high-impact roles at Dell Technologies, IBM, and UQ's Institute for Molecular Bioscience. I have managed the complete data centre lifecycle (including infrastructure, support, policy, and procurement) and used this experience to build effective workflows and relationships.",
-    "My experience also spans sales, technical enablement, and keynote speaking, all focused on empowering others to deliver outstanding business and research excellence."
+    "My experience also spans sales, technical enablement, and keynote speaking, all focused on giving others agency to deliver outstanding business and research excellence."
   ],
   avatarUrl: "https://media.licdn.com/dms/image/v2/D4E03AQEVQ_myI5HDTw/profile-displayphoto-scale_400_400/B4EZpXtixKHcAg-/0/1762408148869?e=1772668800&v=beta&t=rc7zJAN-CSqCnOSY8V4b9GH0p3-pRKNacLgLJ8baALY",
   contact: {
