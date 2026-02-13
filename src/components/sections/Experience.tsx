@@ -6,23 +6,26 @@ import { profileData } from '@/data/resume';
 interface CompanyLogoProps {
   src: string;
   alt: string;
+  isPriority?: boolean;
 }
-const CompanyLogo = ({ src, alt }: CompanyLogoProps) => {
+const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
+    <div className="shrink-0 w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-100 flex items-center justify-center overflow-hidden p-2 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
       {!error ? (
         <img
           src={src}
           alt={alt}
-          loading="lazy"
+          loading={isPriority ? "eager" : "lazy"}
+          // @ts-ignore - fetchPriority is supported in modern browsers for LCP optimization
+          fetchPriority={isPriority ? "high" : "low"}
           decoding="async"
           onError={() => setError(true)}
-          className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 will-change-transform"
+          className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"
         />
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
-          <Building2 className="w-6 h-6" />
+          <Building2 className="w-5 h-5" />
         </div>
       )}
     </div>
@@ -53,6 +56,7 @@ export function Experience() {
                         <CompanyLogo
                           src={exp.logo}
                           alt={`${exp.company} logo`}
+                          isPriority={index === 0}
                         />
                         <div className="space-y-0.5 min-w-0">
                           <CardTitle className="text-xl sm:text-2xl font-bold text-foreground truncate">
