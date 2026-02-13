@@ -69,7 +69,7 @@ export const profileData: ProfileData = {
       company: "Dell Technologies",
       logo: "https://www.femmehub.com/wp-content/uploads/2023/01/Dell.png",
       period: "December 2017 - October 2024",
-      description: "Optimising hybrid-cloud and AI-ready infrastructure for Defence, Federal Government, Higher Education, and Global Accounts.",
+      description: "Defence, Federal Government, Higher Education, and Large Enterprise",
       responsibilities: [
         "AI Solutions Strategy for Australia and New Zealand (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
