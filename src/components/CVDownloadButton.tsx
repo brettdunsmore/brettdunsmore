@@ -15,6 +15,11 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     const pageWidth = doc.internal.pageSize.getWidth();
     const maxTextWidth = pageWidth - (margin * 2);
     let y = 20;
+    const applyTypographyStyle = (size: number, weight: "bold" | "normal" | "italic", color: [number, number, number]) => {
+      doc.setFontSize(size);
+      doc.setFont("helvetica", weight);
+      doc.setTextColor(color[0], color[1], color[2]);
+    };
     const checkPageOverflow = (neededHeight: number) => {
       if (y + neededHeight > 275) {
         doc.addPage();
@@ -23,21 +28,20 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
       }
       return false;
     };
+    // Colors
+    const colorSlate900: [number, number, number] = [15, 23, 42];
+    const colorSlate700: [number, number, number] = [51, 65, 85];
+    const colorSlate600: [number, number, number] = [71, 85, 105];
+    const colorBlue600: [number, number, number] = [37, 99, 235];
     // Header Section
-    doc.setFontSize(24);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(15, 23, 42); // slate-900
+    applyTypographyStyle(24, "bold", colorSlate900);
     doc.text(profileData.name, margin, y);
     y += 10;
-    doc.setFontSize(13);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(37, 99, 235); // blue-600
+    applyTypographyStyle(13, "bold", colorBlue600);
     doc.text(profileData.title, margin, y);
     y += 10;
     // Contact Information Bar
-    doc.setFontSize(9);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(71, 85, 105); // slate-600
+    applyTypographyStyle(9, "normal", colorSlate600);
     const contactLine = `Email: ${profileData.contact.email}  |  Mobile: ${profileData.contact.mobile}  |  LinkedIn: ${profileData.contact.linkedin.replace('https://www.', '')}`;
     doc.text(contactLine, margin, y);
     y += 6;
@@ -45,70 +49,62 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
     doc.line(margin, y, pageWidth - margin, y);
     y += 12;
     // Professional Summary Section
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(15, 23, 42);
-    doc.text("Professional Summary", margin, y);
-    y += 8;
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(51, 65, 85); // slate-700
-    profileData.summaryParagraphs.forEach((para) => {
-      const splitPara = doc.splitTextToSize(para, maxTextWidth);
-      checkPageOverflow(splitPara.length * 5 + 5);
-      doc.text(splitPara, margin, y);
-      y += (splitPara.length * 5) + 6;
-    });
-    y += 4;
-    // Professional History Section
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(15, 23, 42);
-    doc.text("Professional History", margin, y);
-    y += 10;
-    profileData.experience.forEach((exp) => {
-      checkPageOverflow(30);
-      doc.setFontSize(11);
-      doc.setFont("helvetica", "bold");
-      doc.setTextColor(15, 23, 42);
-      doc.text(exp.company, margin, y);
-      doc.setFontSize(10);
-      doc.setFont("helvetica", "normal");
-      doc.setTextColor(71, 85, 105); // slate-600
-      const periodWidth = doc.getTextWidth(exp.period);
-      doc.text(exp.period, pageWidth - margin - periodWidth, y);
-      y += 6;
-      if (exp.description) {
-        doc.setFont("helvetica", "italic");
-        doc.setTextColor(51, 65, 85);
-        const splitDesc = doc.splitTextToSize(exp.description, maxTextWidth);
-        checkPageOverflow(splitDesc.length * 5);
-        doc.text(splitDesc, margin, y);
-        y += (splitDesc.length * 5) + 4;
-      }
-      doc.setFont("helvetica", "normal");
-      doc.setTextColor(51, 65, 85);
-      exp.responsibilities.forEach((resp) => {
-        const splitResp = doc.splitTextToSize(`• ${resp}`, maxTextWidth - 5);
-        checkPageOverflow(splitResp.length * 5);
-        doc.text(splitResp, margin + 5, y);
-        y += (splitResp.length * 5);
+    if (profileData.summaryParagraphs.length > 0) {
+      applyTypographyStyle(14, "bold", colorSlate900);
+      doc.text("Professional Summary", margin, y);
+      y += 8;
+      profileData.summaryParagraphs.forEach((para) => {
+        applyTypographyStyle(10, "normal", colorSlate700);
+        const splitPara = doc.splitTextToSize(para, maxTextWidth);
+        checkPageOverflow(splitPara.length * 5 + 5);
+        doc.text(splitPara, margin, y);
+        y += (splitPara.length * 5) + 6;
       });
+      y += 4;
+    }
+    // Professional History Section
+    if (profileData.experience.length > 0) {
+      applyTypographyStyle(14, "bold", colorSlate900);
+      doc.text("Professional History", margin, y);
       y += 10;
-    });
+      profileData.experience.forEach((exp) => {
+        checkPageOverflow(30);
+        applyTypographyStyle(11, "bold", colorSlate900);
+        doc.text(exp.company, margin, y);
+        applyTypographyStyle(10, "normal", colorSlate600);
+        const periodWidth = doc.getTextWidth(exp.period);
+        doc.text(exp.period, pageWidth - margin - periodWidth, y);
+        y += 6;
+        if (exp.description) {
+          applyTypographyStyle(10, "italic", colorSlate700);
+          const splitDesc = doc.splitTextToSize(exp.description, maxTextWidth);
+          checkPageOverflow(splitDesc.length * 5);
+          doc.text(splitDesc, margin, y);
+          y += (splitDesc.length * 5) + 4;
+        }
+        exp.responsibilities.forEach((resp) => {
+          applyTypographyStyle(10, "normal", colorSlate700);
+          const splitResp = doc.splitTextToSize(`• ${resp}`, maxTextWidth - 5);
+          if (checkPageOverflow(splitResp.length * 5)) {
+            applyTypographyStyle(10, "normal", colorSlate700);
+          }
+          doc.text(splitResp, margin + 5, y);
+          y += (splitResp.length * 5);
+        });
+        y += 10;
+      });
+    }
     // Core Competencies Section
-    checkPageOverflow(25);
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(15, 23, 42);
-    doc.text("Core Competencies", margin, y);
-    y += 10;
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(51, 65, 85);
-    const skillsText = profileData.skills.join("  |  ");
-    const splitSkills = doc.splitTextToSize(skillsText, maxTextWidth);
-    doc.text(splitSkills, margin, y);
+    if (profileData.skills && profileData.skills.length > 0) {
+      checkPageOverflow(25);
+      applyTypographyStyle(14, "bold", colorSlate900);
+      doc.text("Core Competencies", margin, y);
+      y += 10;
+      applyTypographyStyle(10, "normal", colorSlate700);
+      const skillsText = profileData.skills.join("  |  ");
+      const splitSkills = doc.splitTextToSize(skillsText, maxTextWidth);
+      doc.text(splitSkills, margin, y);
+    }
     doc.save(`${profileData.name.replace(/\s+/g, '_')}_Resume.pdf`);
   };
   return (
