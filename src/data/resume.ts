@@ -112,24 +112,24 @@ export const profileData: ProfileData = {
   ],
   linkedinPosts: [
     {
-      title: "A New Chapter at Dell Technologies",
-      snippet: "Reflecting on a decade of growth and the incredible technological evolution I've witnessed. From traditional infrastructure to the AI-driven future.",
-      date: "Recent",
-      imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+      title: "Helping Build a Better Internet at Cloudflare",
+      snippet: "I'm thrilled to share that I've joined Cloudflare to support our Public Sector and Higher Education customers across Australia. Looking forward to helping organisations stay secure and performant.",
+      date: "October 2024",
+      imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800",
       link: "https://www.linkedin.com/in/dunsmorebrett/"
     },
     {
-      title: "The Hidden Risks of Shadow AI",
-      snippet: "As organizations race to adopt generative AI, many are overlooking critical security blind spots. Balance speed of innovation with robust governance.",
-      date: "Recent",
-      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
-      link: "https://www.linkedin.com/in/dunsmorebrett/"
-    },
-    {
-      title: "Balancing AI Innovation with Security",
-      snippet: "Integrating a security-first mindset into edge computing and AI workflows is no longer optional. Security is an enabler of innovation.",
+      title: "Navigating the Strategic Risks of Shadow AI",
+      snippet: "As Generative AI adoption accelerates, the emergence of 'Shadow AI' presents significant governance and security challenges. It's critical to balance the pace of innovation with robust corporate guardrails.",
       date: "Recent",
       imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+      link: "https://www.linkedin.com/in/dunsmorebrett/"
+    },
+    {
+      title: "The Dissolving Perimeter: Why Edge Security is Non-Negotiable",
+      snippet: "In a world of distributed workforces and hybrid clouds, the traditional network perimeter has dissolved. Protecting users and applications at the edge with Zero Trust architecture is the new standard.",
+      date: "Recent",
+      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
       link: "https://www.linkedin.com/in/dunsmorebrett/"
     }
   ],
