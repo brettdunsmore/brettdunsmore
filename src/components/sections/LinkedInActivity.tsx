@@ -50,7 +50,7 @@ export function LinkedInActivity() {
   return (
     <section id="linkedin-activity" className="py-24 bg-muted/30 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
               <Linkedin className="w-3.5 h-3.5" />
@@ -59,16 +59,21 @@ export function LinkedInActivity() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Recent Activity</h2>
             <div className="h-1.5 w-12 bg-blue-600 rounded-full" />
           </div>
-          <p className="text-muted-foreground max-w-md">
-            Insights on cybersecurity, edge computing, and digital transformation shared with the global professional community.
-          </p>
+          <div className="shrink-0">
+            <Button size="lg" className="rounded-full px-8 gap-2 bg-[#0077B5] hover:bg-[#006396] shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95" asChild>
+              <a href={profileData.contact.linkedin} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5" />
+                Follow on LinkedIn
+              </a>
+            </Button>
+          </div>
         </div>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {profileData.linkedinPosts.map((post, idx) => {
             const postKey = `post-${post.title.toLowerCase().replace(/\s+/g, '-')}-${idx}`;
@@ -103,14 +108,6 @@ export function LinkedInActivity() {
             );
           })}
         </motion.div>
-        <div className="flex justify-center">
-          <Button size="lg" className="rounded-full px-8 gap-2 bg-[#0077B5] hover:bg-[#006396] shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95" asChild>
-            <a href={profileData.contact.linkedin} target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
-              Follow on LinkedIn
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
