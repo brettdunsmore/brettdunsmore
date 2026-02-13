@@ -81,7 +81,7 @@ export const profileData: ProfileData = {
       company: "The University of Queensland (IMB)",
       logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
       period: "February 2009 - December 2017",
-      description: "Architecting high-performance computing and data management strategies to empower Life Sciences research and discovery.",
+      description: "High-performance computing and data management, supporting Life Sciences research",
       responsibilities: [
         "Senior IT Manager (2012-2017)",
         "Service Delivery Manager (2010-2012)",
