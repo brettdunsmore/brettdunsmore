@@ -60,11 +60,6 @@ export function Experience() {
                           <CardTitle className="text-2xl font-bold text-foreground">
                             {exp.company}
                           </CardTitle>
-                          {exp.description && (
-                            <p className="text-sm font-medium text-muted-foreground italic">
-                              {exp.description}
-                            </p>
-                          )}
                         </div>
                       </div>
                       <div className="shrink-0 sm:pt-1">
@@ -74,8 +69,20 @@ export function Experience() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-8 pb-10">
-                    {exp.responsibilities.length > 0 ? (
+                  <CardContent className="pt-8 pb-10 space-y-8">
+                    {/* Organizational Context / Focus Area */}
+                    {exp.description && (
+                      <div className="space-y-2">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
+                          Focus & Regional Scope
+                        </p>
+                        <p className="text-base text-foreground font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
+                          {exp.description}
+                        </p>
+                      </div>
+                    )}
+                    {/* Timeline of Roles/Responsibilities */}
+                    {exp.responsibilities.length > 0 && (
                       <div className="space-y-6">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
@@ -87,22 +94,13 @@ export function Experience() {
                             {exp.responsibilities.map((resp, i) => (
                               <li key={i} className="relative pl-8 flex items-start text-sm group/item">
                                 <div className="absolute left-0 top-1.5 -translate-x-[40%] h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
-                                <span className="text-muted-foreground font-medium leading-relaxed">
+                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors">
                                   {resp}
                                 </span>
                               </li>
                             ))}
                           </ul>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="space-y-2">
-                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
-                          Focus Area
-                        </p>
-                        <p className="text-sm text-muted-foreground font-medium leading-relaxed">
-                          {exp.description}
-                        </p>
                       </div>
                     )}
                   </CardContent>
