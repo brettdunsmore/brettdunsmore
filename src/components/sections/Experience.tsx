@@ -17,8 +17,7 @@ const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
           src={src}
           alt={alt}
           loading={isPriority ? "eager" : "lazy"}
-          // @ts-expect-error - fetchpriority is supported in modern browsers for LCP optimization but not yet in React types
-          fetchpriority={isPriority ? "high" : "low"}
+          fetchPriority={isPriority ? "high" : "low"}
           decoding="async"
           onError={() => setError(true)}
           className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"
@@ -51,20 +50,22 @@ export function Experience() {
               >
                 <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
                   <CardHeader className="p-4 sm:p-6 bg-muted/20 border-b border-border/40">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <CompanyLogo
-                          src={exp.logo}
-                          alt={`${exp.company} logo`}
-                          isPriority={index === 0}
-                        />
-                        <div className="space-y-0.5 min-w-0">
-                          <CardTitle className="text-xl sm:text-2xl font-bold text-foreground truncate">
+                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                      <div className="flex items-start gap-4 min-w-0">
+                        <div className="mt-1">
+                          <CompanyLogo
+                            src={exp.logo}
+                            alt={`${exp.company} logo`}
+                            isPriority={index === 0}
+                          />
+                        </div>
+                        <div className="space-y-0.5 min-w-0 flex-1">
+                          <CardTitle className="text-xl sm:text-2xl font-bold text-foreground leading-tight">
                             {exp.company}
                           </CardTitle>
                         </div>
                       </div>
-                      <div className="shrink-0">
+                      <div className="shrink-0 self-start sm:self-center">
                         <span className="inline-flex text-[10px] sm:text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap justify-center shadow-sm">
                           {exp.period}
                         </span>

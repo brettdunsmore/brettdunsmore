@@ -96,8 +96,8 @@ export function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
-                  "text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
-                  activeSection === link.id ? "text-blue-600" : "text-muted-foreground hover:text-foreground"
+                  "text-sm font-semibold transition-all duration-300 delay-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
+                  activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {link.name}
