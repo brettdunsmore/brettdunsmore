@@ -10,8 +10,8 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.4
+        staggerChildren: 0.1,
+        delayChildren: 0.2
       }
     }
   };
@@ -20,8 +20,8 @@ export function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.3
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     }
   };
@@ -30,7 +30,7 @@ export function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.215, 0.61, 0.355, 1] }
+      transition: { duration: 0.6, ease: [0.215, 0.61, 0.355, 1] }
     }
   };
   const springVariants: Variants = {
@@ -42,7 +42,7 @@ export function Hero() {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        delay: 0.2
+        delay: 0.1
       }
     }
   };
@@ -94,7 +94,7 @@ export function Hero() {
               <motion.p
                 key={index}
                 variants={itemVariants}
-                className="leading-relaxed md:leading-8 text-balance"
+                className="leading-relaxed md:leading-8"
               >
                 {paragraph}
               </motion.p>

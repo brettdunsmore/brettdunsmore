@@ -33,7 +33,7 @@ export function LinkedInActivity() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { staggerChildren: 0.12 }
     }
   };
   const itemVariants: Variants = {
@@ -72,14 +72,14 @@ export function LinkedInActivity() {
         >
           {profileData.linkedinPosts.map((post, idx) => (
             <motion.div key={idx} variants={itemVariants}>
-              <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl transition-all duration-300 group">
+              <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl hover:border-blue-600/20 transition-all duration-300 group">
                 <PostThumbnail src={post.imageUrl} alt={post.title} />
                 <CardHeader className="space-y-2 pt-6">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium">
                     <Calendar className="w-3.5 h-3.5" />
                     {post.date}
                   </div>
-                  <h3 className="text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                 </CardHeader>
@@ -88,7 +88,7 @@ export function LinkedInActivity() {
                     {post.snippet}
                   </p>
                 </CardContent>
-                <CardFooter className="pt-2">
+                <CardFooter className="pt-2 pb-6">
                   <Button variant="ghost" className="w-full justify-between group/btn text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20" asChild>
                     <a href={post.link} target="_blank" rel="noopener noreferrer">
                       Read full post
@@ -101,7 +101,7 @@ export function LinkedInActivity() {
           ))}
         </motion.div>
         <div className="flex justify-center">
-          <Button size="lg" className="rounded-full px-8 gap-2 bg-[#0077B5] hover:bg-[#006396] shadow-lg shadow-blue-500/20" asChild>
+          <Button size="lg" className="rounded-full px-8 gap-2 bg-[#0077B5] hover:bg-[#006396] shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95" asChild>
             <a href={profileData.contact.linkedin} target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5" />
               Follow on LinkedIn
