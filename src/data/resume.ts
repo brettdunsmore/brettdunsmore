@@ -126,7 +126,7 @@ export const profileData: ProfileData = {
     "Prople Management",
     "Data Centre Infrastructure",
     "Lifecycle Management",
-    "Digital Transformation"
+    "Digital Transformation",
     "Workforce Transformation",
     "High-Performance Computing",
     "Hierarchical File Systems",
