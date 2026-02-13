@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
+import { ContactForm } from '@/components/ContactForm';
 import {
   Sheet,
   SheetContent,
@@ -80,17 +81,33 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <div className="flex gap-8 mr-4 border-r pr-8 border-border/50 h-6 items-center">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={cn(
-                  "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
-                  activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
-                )}
-              >
-                {link.name}
-              </a>
+              link.id === 'contact' ? (
+                <ContactForm
+                  key={link.name}
+                  trigger={
+                    <button
+                      className={cn(
+                        "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
+                        activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
+                      )}
+                    >
+                      {link.name}
+                    </button>
+                  }
+                />
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={cn(
+                    "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
+                    activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {link.name}
+                </a>
+              )
             ))}
           </div>
           <ThemeToggle />
@@ -117,27 +134,47 @@ export function Navbar() {
               <div className="flex flex-col h-full">
                 <nav className="flex flex-col gap-4 flex-1">
                   {NAV_LINKS.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={cn(
-                        "text-lg font-semibold transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-2",
-                        activeSection === link.id ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20" : "text-muted-foreground hover:text-foreground"
-                      )}
-                    >
-                      {link.name}
-                    </a>
+                    link.id === 'contact' ? (
+                      <ContactForm
+                        key={link.name}
+                        trigger={
+                          <button
+                            onClick={closeMenu}
+                            className={cn(
+                              "text-lg font-semibold transition-colors py-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-2",
+                              activeSection === link.id ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20" : "text-muted-foreground hover:text-foreground"
+                            )}
+                          >
+                            {link.name}
+                          </button>
+                        }
+                      />
+                    ) : (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                        className={cn(
+                          "text-lg font-semibold transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-2",
+                          activeSection === link.id ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20" : "text-muted-foreground hover:text-foreground"
+                        )}
+                      >
+                        {link.name}
+                      </a>
+                    )
                   ))}
                 </nav>
                 <div className="pt-8 border-t border-border/50 mt-auto pb-6">
-                  <Button
-                    className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold"
-                    asChild
-                    onClick={closeMenu}
-                  >
-                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Send Inquiry</a>
-                  </Button>
+                  <ContactForm
+                    trigger={
+                      <Button
+                        className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold"
+                        onClick={closeMenu}
+                      >
+                        Send Inquiry
+                      </Button>
+                    }
+                  />
                 </div>
               </div>
             </SheetContent>
