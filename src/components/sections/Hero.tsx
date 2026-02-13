@@ -63,7 +63,6 @@ export function Hero() {
               variants={springVariants}
               className="relative group"
             >
-              {/* Dynamic theme-aware glow */}
               <div className="absolute inset-0 bg-blue-600/30 blur-[40px] rounded-full group-hover:bg-blue-600/40 transition-colors duration-500 dark:bg-blue-400/20" />
               <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-background shadow-2xl overflow-hidden bg-muted flex items-center justify-center">
                 {!imageError ? (
@@ -108,14 +107,14 @@ export function Hero() {
               <a href="#experience">View Professional History</a>
             </Button>
             <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
-              <ContactForm 
+              <ContactForm
                 trigger={
                   <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-blue-200 hover:bg-blue-50 dark:border-blue-900/50 dark:hover:bg-blue-900/20 transition-all">
                     Get in touch
                   </Button>
                 }
               />
-              <CVDownloadButton 
+              <CVDownloadButton
                 className="h-12 px-8 text-base border-blue-200 dark:border-blue-900/50"
               />
             </div>

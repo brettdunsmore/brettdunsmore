@@ -28,11 +28,16 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 interface ContactFormProps {
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
-export function ContactForm({ trigger }: ContactFormProps) {
-  const [open, setOpen] = useState(false);
+export function ContactForm({ trigger, open: externalOpen, onOpenChange: setExternalOpen }: ContactFormProps) {
+  const [internalOpen, setInternalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isControlled = externalOpen !== undefined && setExternalOpen !== undefined;
+  const open = isControlled ? externalOpen : internalOpen;
+  const setOpen = isControlled ? setExternalOpen : setInternalOpen;
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -63,12 +68,14 @@ export function ContactForm({ trigger }: ContactFormProps) {
     } finally {
       setIsSubmitting(false);
     }
-  }, [form]);
+  }, [form, setOpen]);
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {trigger}
-      </DialogTrigger>
+      {trigger && (
+        <DialogTrigger asChild>
+          {trigger}
+        </DialogTrigger>
+      )}
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Send an Inquiry</DialogTitle>
@@ -111,10 +118,10 @@ export function ContactForm({ trigger }: ContactFormProps) {
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="How can I help you?" 
-                      className="min-h-[120px] resize-none" 
-                      {...field} 
+                    <Textarea
+                      placeholder="How can I help you?"
+                      className="min-h-[120px] resize-none"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
