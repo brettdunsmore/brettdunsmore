@@ -16,6 +16,13 @@ const NAV_LINKS = [
   { name: 'Experience', href: '#experience', id: 'experience' },
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
+const SCROLL_SPY_SECTIONS = [
+  'about',
+  'experience',
+  'linkedin-activity',
+  'presentations',
+  'contact'
+];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
   <a
     href="#top"
@@ -36,13 +43,7 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const activeSection = useScrollSpy([
-    'about',
-    'experience',
-    'linkedin-activity',
-    'presentations',
-    'contact'
-  ]);
+  const activeSection = useScrollSpy(SCROLL_SPY_SECTIONS);
   const rafIdRef = useRef<number>(0);
   useEffect(() => {
     const handleScroll = () => {
