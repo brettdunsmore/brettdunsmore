@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Building2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { profileData } from '@/data/resume';
-import { cn } from '@/lib/utils';
 interface CompanyLogoProps {
   src: string;
   alt: string;
@@ -19,7 +18,6 @@ const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
           alt={alt}
           loading="lazy"
           decoding="async"
-          crossOrigin="anonymous"
           onError={() => setError(true)}
           className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 will-change-transform"
         />
@@ -89,8 +87,8 @@ export function Experience() {
                         </p>
                         <ul className="grid gap-4 border-l-2 border-blue-500/30 pl-6 ml-1">
                           {exp.responsibilities.map((resp, i) => (
-                            <li key={i} className="relative flex items-center gap-3 text-sm">
-                              <div className="absolute -left-[1.8125rem] h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm" />
+                            <li key={i} className="relative flex items-start gap-3 text-sm">
+                              <div className="absolute -left-[1.625rem] top-1.5 h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10" />
                               <span className="text-muted-foreground font-medium leading-relaxed">
                                 {resp}
                               </span>

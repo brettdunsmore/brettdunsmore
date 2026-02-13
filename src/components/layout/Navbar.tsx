@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -15,23 +15,23 @@ const NAV_LINKS = [
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
-const Brand = () => (
-  <a href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+const Brand = ({ className }: { className?: string }) => (
+  <a href="/" className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity", className)}>
     Brett Dunsmore<span className="text-blue-600">.</span>
   </a>
 );
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const rafIdRef = React.useRef<number>(0);
-  React.useEffect(() => {
+  const rafIdRef = useRef<number>(0);
+  useEffect(() => {
     const handleScroll = () => {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
       rafIdRef.current = requestAnimationFrame(() => {
         setIsScrolled(window.scrollY > 20);
       });
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
@@ -76,27 +76,27 @@ export function Navbar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 flex flex-col">
+            <SheetContent side="right" className="w-[300px] flex flex-col p-6">
               <SheetHeader className="text-left border-b border-border/50 pb-6 mb-6">
-                <SheetTitle className="text-2xl font-bold tracking-tighter">
-                  Brett Dunsmore<span className="text-blue-600">.</span>
+                <SheetTitle>
+                  <Brand />
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col h-full">
-                <nav className="flex flex-col gap-6 flex-1">
+                <nav className="flex flex-col gap-4 flex-1">
                   {NAV_LINKS.map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
                       onClick={closeMenu}
-                      className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                      className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                     >
                       {link.name}
                     </a>
                   ))}
                 </nav>
-                <div className="pt-8 border-t border-border/50 mt-auto pb-6">
-                  <Button className="w-full" asChild onClick={closeMenu}>
+                <div className="pt-8 border-t border-border/50 mt-auto pb-4">
+                  <Button className="w-full rounded-full" asChild onClick={closeMenu}>
                     <a href="#contact">Get in Touch</a>
                   </Button>
                 </div>

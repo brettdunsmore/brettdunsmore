@@ -1,4 +1,42 @@
-export const profileData = {
+export interface Experience {
+  company: string;
+  logo: string;
+  role: string;
+  period: string;
+  description?: string;
+  responsibilities: string[];
+}
+export interface LinkedInPost {
+  title: string;
+  snippet: string;
+  date: string;
+  imageUrl: string;
+  link: string;
+}
+export interface Presentation {
+  title: string;
+  event: string;
+  videoId: string;
+  videoUrl: string;
+}
+export interface Contact {
+  email: string;
+  linkedin: string;
+  mobile: string;
+}
+export interface ProfileData {
+  name: string;
+  title: string;
+  summaryParagraphs: string[];
+  avatarUrl: string;
+  contact: Contact;
+  experience: Experience[];
+  education: any[];
+  skills: string[];
+  linkedinPosts: LinkedInPost[];
+  presentations: Presentation[];
+}
+export const profileData: ProfileData = {
   name: "Brett Dunsmore",
   title: "Senior Named Account Executive | Helping Build a Better Internet",
   summaryParagraphs: [
