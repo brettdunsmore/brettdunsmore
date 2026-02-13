@@ -9,29 +9,42 @@ interface VideoThumbnailProps {
   title: string;
 }
 const VideoThumbnail = ({ videoId, title }: VideoThumbnailProps) => {
+  const [imgSrc, setImgSrc] = useState(`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`);
   const [error, setError] = useState(false);
+  const handleImageError = () => {
+    if (imgSrc.includes('maxresdefault')) {
+      // Fallback to high quality if maxres is unavailable
+      setImgSrc(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
+    } else if (imgSrc.includes('hqdefault')) {
+      // Fallback to medium quality
+      setImgSrc(`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`);
+    } else {
+      // Final fallback to error state
+      setError(true);
+    }
+  };
   return (
     <div className="relative aspect-video overflow-hidden bg-muted flex items-center justify-center">
       {!error ? (
         <img
-          src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          src={imgSrc}
           alt={title}
           loading="lazy"
           decoding="async"
-          onError={() => setError(true)}
+          onError={handleImageError}
           className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out"
         />
       ) : (
         <Youtube className="w-12 h-12 text-muted-foreground/30" />
       )}
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out pointer-events-none">
-        <motion.div 
+        <motion.div
           className="w-16 h-16 rounded-full bg-red-600 flex items-center justify-center text-white shadow-2xl"
           initial={{ scale: 0.8, opacity: 0 }}
           whileHover={{ scale: 1.1 }}
           animate={{ scale: 1, opacity: 1 }}
         >
-          <Play className="w-8 h-8 fill-current" />
+          <Play className="w-8 h-8 fill-current translate-x-0.5" />
         </motion.div>
       </div>
       <div className="absolute bottom-2 right-2 px-2 py-1 rounded bg-black/70 text-[10px] font-bold text-white uppercase tracking-wider">
