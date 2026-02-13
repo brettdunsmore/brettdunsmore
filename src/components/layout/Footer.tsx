@@ -9,10 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-xl font-bold tracking-tight">Brett Dunsmore</h3>
-            <p className="text-sm text-muted-foreground font-medium">
-              {profileData.title}
-            </p>
-            <p className="text-xs text-muted-foreground/60 pt-2">
+            <p className="text-xs text-muted-foreground/60 pt-1">
               © {new Date().getFullYear()} All rights reserved.
             </p>
           </div>
