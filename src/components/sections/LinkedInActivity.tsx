@@ -14,13 +14,13 @@ export function LinkedInActivity() {
   };
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.5, 
-        ease: "easeOut" 
-      } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
     }
   };
   return (
@@ -49,13 +49,15 @@ export function LinkedInActivity() {
           {profileData.linkedinPosts.map((post, idx) => (
             <motion.div key={idx} variants={itemVariants}>
               <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl transition-all duration-300 group">
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden bg-muted">
                   <img
                     src={post.imageUrl}
                     alt={post.title}
+                    loading="lazy"
+                    decoding="async"
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
                 </div>
                 <CardHeader className="space-y-2 pt-6">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium">

@@ -18,9 +18,10 @@ const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
           src={src}
           alt={alt}
           loading="lazy"
+          decoding="async"
           crossOrigin="anonymous"
           onError={() => setError(true)}
-          className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+          className="w-full h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 will-change-transform"
         />
       ) : (
         <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
@@ -52,10 +53,10 @@ export function Experience() {
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
                       <div className="flex items-start gap-5">
-                        <CompanyLogo 
-                          src={exp.logo} 
-                          alt={`${exp.company} logo`} 
-                          company={exp.company} 
+                        <CompanyLogo
+                          src={exp.logo}
+                          alt={`${exp.company} logo`}
+                          company={exp.company}
                         />
                         <div className="space-y-1.5 pt-1">
                           <CardTitle className="text-2xl font-bold text-foreground">
@@ -69,7 +70,7 @@ export function Experience() {
                         </div>
                       </div>
                       <div className="shrink-0 sm:pt-1">
-                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap">
+                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap min-w-[140px] justify-center">
                           {exp.period}
                         </span>
                       </div>
@@ -77,7 +78,7 @@ export function Experience() {
                   </CardHeader>
                   <CardContent className="pt-8 space-y-8">
                     <div className="space-y-2 min-h-[3rem] flex flex-col justify-center">
-                      <h4 className="text-xl md:text-2xl font-bold text-foreground leading-snug max-w-2xl text-balance">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-snug max-w-2xl text-balance">
                         {exp.role}
                       </h4>
                     </div>
