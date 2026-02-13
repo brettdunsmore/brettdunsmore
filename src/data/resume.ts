@@ -70,7 +70,7 @@ export const profileData: ProfileData = {
       description: "Strategic roles across Public Sector, Defence, and Enterprise.",
       responsibilities: [
         "AI solutions strategy for Australia and New Zealand (2024-2025)",
-        "Principal Solutions Executive for National Accounts (2022-2024)",
+        "Principal Solutions Executive (2022-2024)",
         "Data Centre Solutions Executive (2021-2022)",
         "Senior Systems Engineer (2019-2021)"
       ]
