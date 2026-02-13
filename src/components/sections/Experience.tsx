@@ -59,7 +59,7 @@ export function Experience() {
                           />
                         </div>
                         <div className="space-y-0.5 min-w-0 flex-1">
-                          <CardTitle className="text-xl sm:text-2xl font-bold text-foreground leading-tight">
+                          <CardTitle className="text-xl sm:text-2xl font-bold text-foreground leading-tight break-words hyphens-auto">
                             {exp.company}
                           </CardTitle>
                         </div>
@@ -88,8 +88,11 @@ export function Experience() {
                           Career Progression & Key Roles
                         </p>
                         <div className="relative ml-2">
-                          {/* Refined Vertical timeline line */}
-                          <div className="absolute left-0 top-1.5 bottom-1.5 w-[1.5px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/5 rounded-full" />
+                          {/* Refined Vertical timeline line terminating at the center of the last dot */}
+                          <div 
+                            className="absolute left-0 top-1.5 w-[1.5px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/5 rounded-full" 
+                            style={{ height: `calc(100% - ${exp.responsibilities.length > 1 ? '1.5rem' : '1.5rem'})` }}
+                          />
                           <ul className="relative grid gap-6">
                             {exp.responsibilities.map((resp, i) => (
                               <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm group/item">
