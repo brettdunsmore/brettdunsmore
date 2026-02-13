@@ -1,18 +1,27 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
-
-declare global {
-  interface WindowEventMap {
-    'keydown': KeyboardEvent;
-  }
-}
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
-
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+const NAV_LINKS = [
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
+];
+const Brand = () => (
+  <a href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
+    Brett Dunsmore<span className="text-blue-600">.</span>
+  </a>
+);
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isOpen, setIsOpen] = React.useState(false);
   const rafIdRef = React.useRef<number>(0);
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,41 +36,6 @@ export function Navbar() {
       if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
   }, []);
-
-  React.useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  React.useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsOpen(false);
-      }
-    };
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-    }
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [isOpen]);
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
-  ];
-  const Brand = () => (
-    <a href="/" className="text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity">
-      Brett Dunsmore<span className="text-blue-600">.</span>
-    </a>
-  );
   return (
     <nav
       className={cn(
@@ -74,7 +48,7 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex gap-8 mr-4 border-r pr-8 border-border/50">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -89,59 +63,43 @@ export function Navbar() {
         {/* Mobile Navigation */}
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-10 w-10"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
-        </div>
-        {isOpen && (
-          <div 
-            className="fixed inset-0 z-40 bg-black/80" 
-            onClick={() => setIsOpen(false)}
-          />
-        )}
-        <div className={cn(
-          "fixed inset-y-0 right-0 z-50 h-full w-80 border-l bg-background shadow-xl flex flex-col transform transition-transform duration-300 ease-in-out",
-          isOpen ? "translate-x-0" : "translate-x-full"
-        )}>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-4 right-4 h-8 w-8 p-0 opacity-70 hover:opacity-100"
-            onClick={() => setIsOpen(false)}
-            aria-label="Close menu"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-          <div className="p-8 text-left border-b border-border/50">
-            <div className="text-2xl font-bold tracking-tighter">
-              Brett Dunsmore<span className="text-blue-600">.</span>
-            </div>
-          </div>
-          <div className="flex flex-col h-full p-8">
-            <nav className="flex flex-col gap-6 flex-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-            <div className="pt-8 border-t border-border/50 mt-auto">
-              <Button className="w-full" asChild onClick={() => setIsOpen(false)}>
-                <a href="#contact">Get in Touch</a>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-10 w-10"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
               </Button>
-            </div>
-          </div>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80 flex flex-col">
+              <SheetHeader className="text-left border-b border-border/50 pb-6 mb-6">
+                <SheetTitle className="text-2xl font-bold tracking-tighter">
+                  Brett Dunsmore<span className="text-blue-600">.</span>
+                </SheetTitle>
+              </SheetHeader>
+              <div className="flex flex-col h-full">
+                <nav className="flex flex-col gap-6 flex-1">
+                  {NAV_LINKS.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-xl font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </nav>
+                <div className="pt-8 border-t border-border/50 mt-auto pb-6">
+                  <Button className="w-full" asChild>
+                    <a href="#contact">Get in Touch</a>
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
