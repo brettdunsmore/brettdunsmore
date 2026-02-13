@@ -74,13 +74,8 @@ export function Experience() {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-8 space-y-8">
-                    <div className="space-y-2 min-h-[3rem] flex flex-col justify-center">
-                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight break-words max-w-full text-balance">
-                        {exp.role}
-                      </h4>
-                    </div>
-                    {exp.responsibilities.length > 0 && (
+                  <CardContent className="pt-8 pb-10">
+                    {exp.responsibilities.length > 0 ? (
                       <div className="space-y-6">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
@@ -96,6 +91,10 @@ export function Experience() {
                           ))}
                         </ul>
                       </div>
+                    ) : (
+                      <p className="text-sm text-muted-foreground font-medium italic">
+                        Current role focus in {exp.description || 'progress'}.
+                      </p>
                     )}
                   </CardContent>
                 </Card>

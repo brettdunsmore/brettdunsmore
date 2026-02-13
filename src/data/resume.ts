@@ -1,7 +1,6 @@
 export interface Experience {
   company: string;
   logo: string;
-  role: string;
   period: string;
   description?: string;
   responsibilities: string[];
@@ -60,7 +59,6 @@ export const profileData: ProfileData = {
     {
       company: "Cloudflare",
       logo: "https://logo.clearbit.com/cloudflare.com?size=64",
-      role: "Senior Named Account Executive",
       period: "October 2025 - Present",
       description: "Public Sector (QLD/NT)",
       responsibilities: []
@@ -68,7 +66,6 @@ export const profileData: ProfileData = {
     {
       company: "Dell Technologies",
       logo: "https://logo.clearbit.com/dell.com?size=64",
-      role: "AI Solutions Executive (ANZ), Principal Solutions Executive",
       period: "December 2017 - October 2025",
       description: "Strategic roles across Public Sector, Defence, and Enterprise.",
       responsibilities: [
@@ -81,7 +78,6 @@ export const profileData: ProfileData = {
     {
       company: "The University of Queensland (IMB)",
       logo: "https://logo.clearbit.com/uq.edu.au?size=64",
-      role: "Senior IT Manager, Service Delivery Manager",
       period: "February 2009 - December 2017",
       description: "Institute for Molecular Bioscience IT Leadership.",
       responsibilities: [
@@ -93,7 +89,6 @@ export const profileData: ProfileData = {
     {
       company: "IBM",
       logo: "https://logo.clearbit.com/ibm.com?size=64",
-      role: "Senior Technical Support Officer, Customer Relations Manager",
       period: "June 2006 - February 2009",
       description: "Technical excellence and customer relationship management.",
       responsibilities: [
