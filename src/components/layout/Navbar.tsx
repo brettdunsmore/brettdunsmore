@@ -20,7 +20,7 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
     href="#top"
     aria-label="Brett Dunsmore - Home"
     className={cn(
-      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md",
+      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md ring-offset-background",
       className
     )}
     onClick={(e) => {
@@ -53,9 +53,9 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b py-4 shadow-sm"
+          ? "bg-background/80 backdrop-blur-md border-b py-3 shadow-sm"
           : "bg-transparent py-6"
       )}
     >
@@ -63,12 +63,12 @@ export function Navbar() {
         <Brand />
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <div className="flex gap-8 mr-4 border-r pr-8 border-border/50">
+          <div className="flex gap-8 mr-4 border-r pr-8 border-border/50 h-6 items-center">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm px-1"
+                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background"
               >
                 {link.name}
               </a>
@@ -84,7 +84,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 aria-label="Open navigation menu"
               >
                 <Menu className="h-6 w-6" />
@@ -103,15 +103,15 @@ export function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={closeMenu}
-                      className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
+                      className="text-lg font-semibold text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm"
                     >
                       {link.name}
                     </a>
                   ))}
                 </nav>
-                <div className="pt-8 border-t border-border/50 mt-auto pb-4">
+                <div className="pt-8 border-t border-border/50 mt-auto pb-6">
                   <Button
-                    className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white"
+                    className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold"
                     asChild
                     onClick={closeMenu}
                   >
