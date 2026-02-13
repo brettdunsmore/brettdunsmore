@@ -58,7 +58,7 @@ export const profileData: ProfileData = {
   experience: [
     {
       company: "Cloudflare",
-      logo: "https://cf-assets.www.cloudflare.com/dzlvafdwdttg/4oTGHshDJiO0m1jLHrTkhK/559e0727b508c88a7d51df39528f5c62/cloudflare-og-image.png",
+      logo: "https://www.clipartmax.com/png/middle/146-1469382_cloudflare-logo-cloudflare-logo-transparent.png",
       period: "October 2025 - Present",
       description: "Public Sector, Queensland and Northern Territory",
       responsibilities: [
