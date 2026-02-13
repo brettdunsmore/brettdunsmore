@@ -15,13 +15,14 @@ const NAV_LINKS = [
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
 ];
-const Brand = ({ className }: { className?: string }) => (
-  <a 
-    href="#top" 
+const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
+  <a
+    href="#top"
     className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md", className)}
     onClick={(e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (onClick) onClick();
     }}
   >
     Brett Dunsmore<span className="text-blue-600">.</span>
@@ -88,7 +89,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-[300px] flex flex-col p-6">
               <SheetHeader className="text-left border-b border-border/50 pb-6 mb-6">
                 <SheetTitle>
-                  <Brand />
+                  <Brand onClick={closeMenu} />
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col h-full">
