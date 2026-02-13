@@ -51,7 +51,7 @@ export const profileData: ProfileData = {
   ],
   avatarUrl: "https://media.licdn.com/dms/image/v2/D4E03AQEVQ_myI5HDTw/profile-displayphoto-scale_400_400/B4EZpXtixKHcAg-/0/1762408148869?e=1772668800&v=beta&t=rc7zJAN-CSqCnOSY8V4b9GH0p3-pRKNacLgLJ8baALY",
   contact: {
-    email: "dunsmore.brett@gmail.com",
+    email: "me@brettdunsmore.com",
     linkedin: "https://www.linkedin.com/in/dunsmorebrett",
     mobile: "61429209460",
   },
