@@ -17,8 +17,8 @@ const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
           src={src}
           alt={alt}
           loading={isPriority ? "eager" : "lazy"}
-          // @ts-ignore - fetchPriority is supported in modern browsers for LCP optimization
-          fetchPriority={isPriority ? "high" : "low"}
+          // @ts-expect-error - fetchpriority is supported in modern browsers for LCP optimization but not yet in React types
+          fetchpriority={isPriority ? "high" : "low"}
           decoding="async"
           onError={() => setError(true)}
           className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"
