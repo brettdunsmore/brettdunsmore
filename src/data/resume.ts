@@ -62,7 +62,7 @@ export const profileData: ProfileData = {
       period: "October 2024 - Present",
       description: "Public Sector and Higher Education",
       responsibilities: [
-        "Senior Named Account Executive, Public Sector"
+        "Senior Named Account Executive"
       ]
     },
     {
@@ -92,7 +92,7 @@ export const profileData: ProfileData = {
       company: "IBM",
       logo: "https://logo.clearbit.com/ibm.com?size=64",
       period: "June 2006 - February 2009",
-      description: "L3/4 Technical Support, Training and Quality Assurance",
+      description: "L3/4 Technical Support, Training and Quality Assurance - APAC",
       responsibilities: [
         "Senior Technical Support (2008-2009)",
         "Customer Relations Manager (2007-2008)",
