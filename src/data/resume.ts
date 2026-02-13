@@ -124,7 +124,7 @@ export const profileData: ProfileData = {
   ],
   presentations: [
     {
-      title: "THETA 2025: Higher Ed Digital Transformation",
+      title: "The Perfect Research Cloud, by Researchers.",
       event: "THETA Conference",
       videoId: "4Vt7Q0vz5Y0",
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
@@ -136,7 +136,7 @@ export const profileData: ProfileData = {
       videoUrl: "https://youtu.be/S5ZZAT2GqQQ"
     },
     {
-      title: "6D.ai & The Spatial Web",
+      title: "6D.ai - Standouts Panel",
       event: "Emerging Tech Showcase",
       videoId: "SmZTZ2SzWLc",
       videoUrl: "https://youtu.be/SmZTZ2SzWLc"
