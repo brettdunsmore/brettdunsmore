@@ -88,18 +88,16 @@ export function Experience() {
                           Career Progression & Key Roles
                         </p>
                         <div className="relative ml-2">
-                          {/* Refined Vertical timeline line: only rendered if multiple items exist */}
                           {exp.responsibilities.length > 1 && (
                             <div
-                              className="absolute left-0 top-2.5 w-[1.5px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/5 rounded-full"
-                              style={{ height: `calc(100% - 1.25rem)` }}
+                              className="absolute left-0 top-3 w-[1.5px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/5 rounded-full"
+                              style={{ height: `calc(100% - 1.5rem)` }}
                             />
                           )}
                           <ul className="relative grid gap-6">
                             {exp.responsibilities.map((resp, i) => (
                               <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm group/item">
-                                {/* Enhanced Dot indicator */}
-                                <div className="absolute left-0 top-[0.625rem] -translate-x-1/2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-[0_0_10px_rgba(37,99,235,0.2)] z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500 group-hover/item:shadow-[0_0_12px_rgba(37,99,235,0.4)]" />
+                                <div className="absolute left-0 top-[0.6rem] -translate-x-1/2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-[0_0_10px_rgba(37,99,235,0.2)] z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500 group-hover/item:shadow-[0_0_12px_rgba(37,99,235,0.4)]" />
                                 <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}
                                 </span>

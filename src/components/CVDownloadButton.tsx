@@ -28,27 +28,23 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
       }
       return false;
     };
-    // Colors
     const colorSlate900: [number, number, number] = [15, 23, 42];
     const colorSlate700: [number, number, number] = [51, 65, 85];
     const colorSlate600: [number, number, number] = [71, 85, 105];
     const colorBlue600: [number, number, number] = [37, 99, 235];
-    // Header Section
     applyTypographyStyle(24, "bold", colorSlate900);
     doc.text(profileData.name, margin, y);
     y += 10;
     applyTypographyStyle(13, "bold", colorBlue600);
     doc.text(profileData.title, margin, y);
     y += 10;
-    // Contact Information Bar
     applyTypographyStyle(9, "normal", colorSlate600);
     const contactLine = `Email: ${profileData.contact.email}  |  Mobile: ${profileData.contact.mobile}  |  LinkedIn: ${profileData.contact.linkedin.replace('https://www.', '')}`;
     doc.text(contactLine, margin, y);
     y += 6;
-    doc.setDrawColor(203, 213, 225); // slate-300
+    doc.setDrawColor(203, 213, 225);
     doc.line(margin, y, pageWidth - margin, y);
     y += 12;
-    // Professional Summary Section
     if (profileData.summaryParagraphs.length > 0) {
       applyTypographyStyle(14, "bold", colorSlate900);
       doc.text("Professional Summary", margin, y);
@@ -62,13 +58,12 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
       });
       y += 4;
     }
-    // Professional History Section
     if (profileData.experience.length > 0) {
       applyTypographyStyle(14, "bold", colorSlate900);
       doc.text("Professional History", margin, y);
       y += 10;
       profileData.experience.forEach((exp) => {
-        checkPageOverflow(30);
+        checkPageOverflow(35);
         applyTypographyStyle(11, "bold", colorSlate900);
         doc.text(exp.company, margin, y);
         applyTypographyStyle(10, "normal", colorSlate600);
@@ -78,25 +73,22 @@ export function CVDownloadButton({ className, variant = "outline" }: CVDownloadB
         if (exp.description) {
           applyTypographyStyle(10, "italic", colorSlate700);
           const splitDesc = doc.splitTextToSize(exp.description, maxTextWidth);
-          checkPageOverflow(splitDesc.length * 5);
+          checkPageOverflow(splitDesc.length * 5 + 5);
           doc.text(splitDesc, margin, y);
           y += (splitDesc.length * 5) + 4;
         }
         exp.responsibilities.forEach((resp) => {
           applyTypographyStyle(10, "normal", colorSlate700);
           const splitResp = doc.splitTextToSize(`• ${resp}`, maxTextWidth - 5);
-          if (checkPageOverflow(splitResp.length * 5)) {
-            applyTypographyStyle(10, "normal", colorSlate700);
-          }
+          checkPageOverflow(splitResp.length * 5);
           doc.text(splitResp, margin + 5, y);
           y += (splitResp.length * 5);
         });
         y += 10;
       });
     }
-    // Core Competencies Section
     if (profileData.skills && profileData.skills.length > 0) {
-      checkPageOverflow(25);
+      checkPageOverflow(30);
       applyTypographyStyle(14, "bold", colorSlate900);
       doc.text("Core Competencies", margin, y);
       y += 10;

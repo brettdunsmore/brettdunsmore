@@ -59,13 +59,12 @@ export function Navbar() {
     const targetId = href.replace('#', '');
     const elem = document.getElementById(targetId);
     if (elem) {
-      // Use scrollIntoView which respects the scroll-margin-top utility
       elem.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
+      closeMenu();
     }
-    closeMenu();
   };
   return (
     <nav
@@ -77,8 +76,7 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Brand />
-        {/* Desktop Navigation */}
+        <Brand onClick={closeMenu} />
         <div className="hidden md:flex items-center gap-8">
           <div className="flex gap-8 mr-4 border-r pr-8 border-border/50 h-6 items-center">
             {NAV_LINKS.map((link) => (
@@ -97,7 +95,6 @@ export function Navbar() {
           </div>
           <ThemeToggle />
         </div>
-        {/* Mobile Navigation */}
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
