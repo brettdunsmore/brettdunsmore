@@ -24,6 +24,12 @@ export interface Contact {
   linkedin: string;
   mobile: string;
 }
+export interface Education {
+  school: string;
+  degree: string;
+  period: string;
+  logo?: string;
+}
 export interface ProfileData {
   name: string;
   title: string;
@@ -31,7 +37,7 @@ export interface ProfileData {
   avatarUrl: string;
   contact: Contact;
   experience: Experience[];
-  education: any[];
+  education: Education[];
   skills: string[];
   linkedinPosts: LinkedInPost[];
   presentations: Presentation[];

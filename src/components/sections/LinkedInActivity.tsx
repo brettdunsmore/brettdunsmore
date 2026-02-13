@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Linkedin, ExternalLink, Calendar } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
+interface PostThumbnailProps {
+  src: string;
+  alt: string;
+}
+const PostThumbnail = ({ src, alt }: PostThumbnailProps) => {
+  const [error, setError] = useState(false);
+  return (
+    <div className="relative aspect-video overflow-hidden bg-muted flex items-center justify-center">
+      {!error ? (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          onError={() => setError(true)}
+          className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+        />
+      ) : (
+        <Linkedin className="w-12 h-12 text-muted-foreground/30" />
+      )}
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
+    </div>
+  );
+};
 export function LinkedInActivity() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -24,7 +48,7 @@ export function LinkedInActivity() {
     }
   };
   return (
-    <section id="linkedin-activity" className="py-24 bg-muted/30">
+    <section id="linkedin-activity" className="py-24 bg-muted/30 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-4">
@@ -49,16 +73,7 @@ export function LinkedInActivity() {
           {profileData.linkedinPosts.map((post, idx) => (
             <motion.div key={idx} variants={itemVariants}>
               <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl transition-all duration-300 group">
-                <div className="relative aspect-video overflow-hidden bg-muted">
-                  <img
-                    src={post.imageUrl}
-                    alt={post.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
-                </div>
+                <PostThumbnail src={post.imageUrl} alt={post.title} />
                 <CardHeader className="space-y-2 pt-6">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium">
                     <Calendar className="w-3.5 h-3.5" />

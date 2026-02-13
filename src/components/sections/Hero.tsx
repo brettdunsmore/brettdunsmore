@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
 export function Hero() {
+  const [imageError, setImageError] = useState(false);
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,11 +38,11 @@ export function Hero() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 15,
-        delay: 0.2 
+        delay: 0.2
       }
     }
   };
@@ -60,18 +62,23 @@ export function Hero() {
               className="relative group"
             >
               <div className="absolute inset-0 bg-blue-600/20 blur-3xl rounded-full group-hover:bg-blue-600/30 transition-colors duration-500" />
-              <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-background shadow-2xl overflow-hidden bg-muted">
-                <img
-                  src={profileData.avatarUrl}
-                  alt={profileData.name}
-                  loading="lazy"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
+              <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-background shadow-2xl overflow-hidden bg-muted flex items-center justify-center">
+                {!imageError ? (
+                  <img
+                    src={profileData.avatarUrl}
+                    alt={profileData.name}
+                    loading="lazy"
+                    onError={() => setImageError(true)}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                ) : (
+                  <User className="w-12 h-12 text-muted-foreground" />
+                )}
               </div>
             </motion.div>
           </div>
-          <motion.h1 
-            variants={itemVariants} 
+          <motion.h1
+            variants={itemVariants}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70"
           >
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-blue-600">.</span>
