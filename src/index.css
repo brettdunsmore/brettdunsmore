@@ -37,8 +37,11 @@
 }
 @layer utilities {
   .bg-gradient-mesh {
-    background-image: radial-gradient(at 40% 20%, hsla(217,100%,74%,0.15) 0px, transparent 50%), 
-                      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%), 
-                      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.15) 0px, transparent 50%);
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(217, 91%, 60%, 0.08) 0px, transparent 60%),
+      radial-gradient(at 100% 0%, hsla(215, 25%, 27%, 0.05) 0px, transparent 60%),
+      radial-gradient(at 100% 100%, hsla(217, 91%, 60%, 0.08) 0px, transparent 60%),
+      radial-gradient(at 0% 100%, hsla(215, 25%, 27%, 0.05) 0px, transparent 60%),
+      radial-gradient(at 50% 50%, hsla(217, 91%, 60%, 0.03) 0px, transparent 80%);
   }
 }
