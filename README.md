@@ -1,6 +1,6 @@
 # Brett Dunsmore Portfolio
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/brettdunsmore/brettdunsmore)
 
 ## Overview
 
@@ -83,7 +83,7 @@ Outputs to `dist/` for Cloudflare deployment.
 
 Deploy to Cloudflare Workers/Pages with zero-config:
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/brettdunsmore/brettdunsmore)
 
 1. **Login to Cloudflare**:
    ```
