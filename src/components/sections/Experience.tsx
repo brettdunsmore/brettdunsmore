@@ -73,7 +73,7 @@ export function Experience() {
                     {exp.description && (
                       <div className="space-y-3">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
-                          Focus & Regional Scope
+                          Strategic Focus & Scope
                         </p>
                         <p className="text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
                           {exp.description}
@@ -91,7 +91,7 @@ export function Experience() {
                           <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
                               <li key={i} className="relative pl-8 flex items-start text-sm group/item">
-                                {/* Precision-aligned node at exactly 0.625rem from top to match 1.5rem leading center */}
+                                {/* Precision-aligned node at exactly 0.55rem from top to match 1.5rem leading center */}
                                 <div className="absolute left-0 top-[0.55rem] -translate-x-[45%] h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
                                 <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}

@@ -81,7 +81,7 @@ export const profileData: ProfileData = {
       company: "The University of Queensland (IMB)",
       logo: "https://logo.clearbit.com/uq.edu.au?size=64",
       period: "February 2009 - December 2017",
-      description: "Institute for Molecular Bioscience IT Leadership.",
+      description: "Supporting Life Sciences Research and Drug Discovery",
       responsibilities: [
         "Senior IT Manager (2012-2017)",
         "Service Delivery Manager (2010-2012)",
