@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
 export function Hero() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +13,7 @@ export function Hero() {
       }
     }
   };
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -52,13 +52,13 @@ export function Hero() {
           <motion.h2 variants={itemVariants} className="text-xl md:text-2xl font-semibold text-foreground/90 mb-10 max-w-3xl mx-auto leading-tight text-balance">
             {profileData.title}
           </motion.h2>
-          <motion.div 
-            variants={itemVariants} 
+          <motion.div
+            variants={itemVariants}
             className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto space-y-6 text-balance text-left md:text-center"
           >
             {profileData.summaryParagraphs.map((paragraph, index) => (
-              <motion.p 
-                key={index} 
+              <motion.p
+                key={index}
                 variants={itemVariants}
                 className="leading-relaxed md:leading-8"
               >
