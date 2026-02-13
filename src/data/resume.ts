@@ -53,7 +53,7 @@ export const profileData: ProfileData = {
   contact: {
     email: "me@brettdunsmore.com",
     linkedin: "https://www.linkedin.com/in/dunsmorebrett",
-    mobile: "+61429209460",
+    mobile: "+61 429 209 460",
   },
   experience: [
     {
@@ -71,7 +71,7 @@ export const profileData: ProfileData = {
       period: "December 2017 - October 2024",
       description: "Defence, Federal, Higher Education and Large Enterprise",
       responsibilities: [
-        "AI solutions strategy for Australia and New Zealand (2024-2025)",
+        "AI Solutions Strategy for Australia and New Zealand (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
         "Data Centre Solutions Executive (2021-2022)",
         "Senior Systems Engineer (2019-2021)"

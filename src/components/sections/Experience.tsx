@@ -47,33 +47,33 @@ export function Experience() {
                 transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
                 <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
-                  <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                      <div className="flex items-center gap-5">
+                  <CardHeader className="p-4 sm:p-6 bg-muted/20 border-b border-border/40">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div className="flex items-center gap-4">
                         <CompanyLogo
                           src={exp.logo}
                           alt={`${exp.company} logo`}
                         />
-                        <div className="space-y-1">
-                          <CardTitle className="text-2xl font-bold text-foreground">
+                        <div className="space-y-0.5 min-w-0">
+                          <CardTitle className="text-xl sm:text-2xl font-bold text-foreground truncate">
                             {exp.company}
                           </CardTitle>
                         </div>
                       </div>
                       <div className="shrink-0">
-                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap min-w-[140px] justify-center shadow-sm">
+                        <span className="inline-flex text-[10px] sm:text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap justify-center shadow-sm">
                           {exp.period}
                         </span>
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="pt-8 pb-10 space-y-8">
+                  <CardContent className="p-5 sm:p-8 space-y-8">
                     {exp.description && (
                       <div className="space-y-3">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Strategic Focus & Scope
                         </p>
-                        <p className="text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
+                        <p className="text-sm sm:text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
                           {exp.description}
                         </p>
                       </div>
@@ -83,12 +83,12 @@ export function Experience() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
                         </p>
-                        <div className="relative ml-1.5">
+                        <div className="relative ml-2">
                           <div className="absolute left-0 top-1.5 bottom-1.5 w-[2px] bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-blue-500/10 rounded-full" />
                           <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
-                              <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-sm group/item">
-                                <div className="absolute left-0 top-[0.55rem] -translate-x-1/2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
+                              <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm group/item">
+                                <div className="absolute left-0 top-[0.6rem] -translate-x-1/2 h-2 w-2 sm:h-2.5 sm:w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
                                 <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}
                                 </span>
