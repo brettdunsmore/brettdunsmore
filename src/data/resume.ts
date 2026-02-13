@@ -92,7 +92,7 @@ export const profileData: ProfileData = {
       company: "IBM",
       logo: "https://logo.clearbit.com/ibm.com?size=64",
       period: "June 2006 - February 2009",
-      description: "Technical excellence and customer relationship management.",
+      description: "L3/4 Technical Support, Training and Quality Assurance",
       responsibilities: [
         "Senior Technical Support (2008-2009)",
         "Customer Relations Manager (2007-2008)",
