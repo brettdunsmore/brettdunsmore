@@ -11,7 +11,7 @@ export function HomePage() {
     <div className="min-h-screen bg-background font-sans selection:bg-blue-100 selection:text-blue-900 flex flex-col">
       <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow pb-12">
         <Hero />
         <Experience />
         <LinkedInActivity />

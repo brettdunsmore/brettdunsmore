@@ -16,7 +16,7 @@ const NAV_LINKS = [
   { name: 'Contact', href: '#contact' },
 ];
 const Brand = ({ className }: { className?: string }) => (
-  <a href="/" className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity", className)}>
+  <a href="/" className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md", className)}>
     Brett Dunsmore<span className="text-blue-600">.</span>
   </a>
 );
@@ -42,7 +42,9 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b py-4" : "bg-transparent py-6"
+        isScrolled 
+          ? "bg-background/90 backdrop-blur-lg border-b py-4 shadow-sm" 
+          : "bg-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -54,7 +56,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm px-1"
               >
                 {link.name}
               </a>
@@ -70,7 +72,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-10 w-10"
+                className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-500"
                 aria-label="Open menu"
               >
                 <Menu className="h-6 w-6" />
@@ -89,14 +91,14 @@ export function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={closeMenu}
-                      className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                      className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
                     >
                       {link.name}
                     </a>
                   ))}
                 </nav>
                 <div className="pt-8 border-t border-border/50 mt-auto pb-4">
-                  <Button className="w-full rounded-full" asChild onClick={closeMenu}>
+                  <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white" asChild onClick={closeMenu}>
                     <a href="#contact">Get in Touch</a>
                   </Button>
                 </div>

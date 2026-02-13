@@ -85,10 +85,10 @@ export function Experience() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
                         </p>
-                        <ul className="grid gap-4 border-l-2 border-blue-500/30 pl-6 ml-1">
+                        <ul className="grid gap-4 border-l-2 border-blue-500/40 pl-6 ml-1">
                           {exp.responsibilities.map((resp, i) => (
-                            <li key={i} className="relative flex items-start gap-3 text-sm">
-                              <div className="absolute -left-[1.625rem] top-1.5 h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10" />
+                            <li key={i} className="relative flex items-start gap-3 text-sm group/item">
+                              <div className="absolute -left-[1.875rem] top-1.5 h-3 w-3 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
                               <span className="text-muted-foreground font-medium leading-relaxed">
                                 {resp}
                               </span>
