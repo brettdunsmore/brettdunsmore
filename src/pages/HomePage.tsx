@@ -7,8 +7,7 @@ import { Experience } from '@/components/sections/Experience';
 import { Presentations } from '@/components/sections/Presentations';
 export function HomePage() {
   useEffect(() => {
-    // Management of document title and potentially other meta tags
-    document.title = "Hi, I'm Brett Dunsmore | Helping Build a Better Internet";
+    document.title = "Brett Dunsmore | Helping Build a Better Internet";
   }, []);
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-blue-600 selection:text-white flex flex-col transition-colors duration-300">
@@ -16,12 +15,14 @@ export function HomePage() {
       <div id="top" className="sr-only" aria-hidden="true" />
       <Navbar />
       <main id="main-content" className="flex-grow focus:outline-none" tabIndex={-1}>
-        {/* Sections must use these IDs for Navbar/ScrollSpy synchronization */}
-        <Hero /> {/* contains id="about" */}
-        <Experience /> {/* contains id="experience" */}
-        <Presentations /> {/* contains id="presentations" */}
+        {/* Sections adhere to responsive gutter standards and vertical spacing */}
+        <Hero /> 
+        <div className="space-y-0">
+          <Experience />
+          <Presentations />
+        </div>
       </main>
-      <Footer /> {/* contains id="contact" */}
+      <Footer />
       {/* Global toast notifications */}
       <Toaster richColors closeButton position="bottom-right" />
     </div>
