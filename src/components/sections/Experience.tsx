@@ -80,16 +80,20 @@ export function Experience() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Career Progression & Key Roles
                         </p>
-                        <ul className="relative grid gap-4 border-l-2 border-blue-500/40 ml-1.5">
-                          {exp.responsibilities.map((resp, i) => (
-                            <li key={i} className="relative pl-8 flex items-start text-sm group/item">
-                              <div className="absolute left-0 top-1.5 -translate-x-1/2 h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
-                              <span className="text-muted-foreground font-medium leading-relaxed">
-                                {resp}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="relative ml-1.5">
+                          {/* Timeline Line */}
+                          <div className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-blue-500/40 rounded-full" />
+                          <ul className="relative grid gap-4">
+                            {exp.responsibilities.map((resp, i) => (
+                              <li key={i} className="relative pl-8 flex items-start text-sm group/item">
+                                <div className="absolute left-0 top-1.5 -translate-x-[40%] h-3.5 w-3.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-transform duration-300 group-hover/item:scale-125 group-hover:bg-blue-500" />
+                                <span className="text-muted-foreground font-medium leading-relaxed">
+                                  {resp}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     ) : (
                       <div className="space-y-2">

@@ -16,7 +16,14 @@ const NAV_LINKS = [
   { name: 'Contact', href: '#contact' },
 ];
 const Brand = ({ className }: { className?: string }) => (
-  <a href="/" className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md", className)}>
+  <a 
+    href="#top" 
+    className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md", className)}
+    onClick={(e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }}
+  >
     Brett Dunsmore<span className="text-blue-600">.</span>
   </a>
 );
@@ -42,8 +49,8 @@ export function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-background/90 backdrop-blur-lg border-b py-4 shadow-sm" 
+        isScrolled
+          ? "bg-background/90 backdrop-blur-lg border-b py-4 shadow-sm"
           : "bg-transparent py-6"
       )}
     >
