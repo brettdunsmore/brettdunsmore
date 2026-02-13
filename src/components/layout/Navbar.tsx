@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { name: 'About', href: '#about', id: 'about' },
   { name: 'Experience', href: '#experience', id: 'experience' },
   { name: 'Presentations', href: '#presentations', id: 'presentations' },
-  { name: 'Contact', href: '#contact', id: 'contact' },
+  { name: 'Inquiry', href: '#contact', id: 'contact' },
 ];
 const SCROLL_SPY_SECTIONS = ['about', 'experience', 'presentations', 'contact'];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
@@ -136,7 +136,7 @@ export function Navbar() {
                     asChild
                     onClick={closeMenu}
                   >
-                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Get in Touch</a>
+                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')}>Send Inquiry</a>
                   </Button>
                 </div>
               </div>
