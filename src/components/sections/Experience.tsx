@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Building2 } from 'lucide-react';
+import { Building2 } from 'lucide-material';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { profileData } from '@/data/resume';
 interface CompanyLogoProps {
   src: string;
   alt: string;
-  company: string;
 }
-const CompanyLogo = ({ src, alt, company }: CompanyLogoProps) => {
+const CompanyLogo = ({ src, alt }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
     <div className="shrink-0 w-12 h-12 min-h-[48px] rounded-full border border-border/50 bg-white flex items-center justify-center overflow-hidden p-1.5 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
@@ -41,7 +40,7 @@ export function Experience() {
           <div className="space-y-12">
             {profileData.experience.map((exp, index) => (
               <motion.div
-                key={`${exp.company}-${index}`}
+                key={`exp-${exp.company}-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -54,7 +53,6 @@ export function Experience() {
                         <CompanyLogo
                           src={exp.logo}
                           alt={`${exp.company} logo`}
-                          company={exp.company}
                         />
                         <div className="space-y-1.5 pt-1">
                           <CardTitle className="text-2xl font-bold text-foreground">
@@ -86,13 +84,11 @@ export function Experience() {
                           Career Progression & Key Roles
                         </p>
                         <div className="relative ml-1.5">
-                          {/* Refined Timeline Line with Gradient - Enhanced tail end visibility */}
                           <div className="absolute left-0 top-1.5 bottom-1.5 w-[2px] bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-blue-500/10 rounded-full" />
                           <ul className="relative grid gap-5">
                             {exp.responsibilities.map((resp, i) => (
-                              <li key={i} className="relative pl-8 flex items-start text-sm group/item">
-                                {/* Precision-aligned node - exactly centered with text line-height */}
-                                <div className="absolute left-0 top-[0.625rem] -translate-x-[45%] h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
+                              <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-sm group/item">
+                                <div className="absolute left-0 top-[0.55rem] -translate-x-[45%] h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-sm z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500" />
                                 <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
                                   {resp}
                                 </span>

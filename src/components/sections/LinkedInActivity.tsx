@@ -70,35 +70,38 @@ export function LinkedInActivity() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
         >
-          {profileData.linkedinPosts.map((post, idx) => (
-            <motion.div key={idx} variants={itemVariants}>
-              <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl hover:border-blue-600/20 transition-all duration-300 group">
-                <PostThumbnail src={post.imageUrl} alt={post.title} />
-                <CardHeader className="space-y-2 pt-6">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {post.date}
-                  </div>
-                  <h3 className="text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
-                    {post.snippet}
-                  </p>
-                </CardContent>
-                <CardFooter className="pt-2 pb-6">
-                  <Button variant="ghost" className="w-full justify-between group/btn text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20" asChild>
-                    <a href={post.link} target="_blank" rel="noopener noreferrer">
-                      Read full post
-                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+          {profileData.linkedinPosts.map((post, idx) => {
+            const postKey = `post-${post.title.toLowerCase().replace(/\s+/g, '-')}-${idx}`;
+            return (
+              <motion.div key={postKey} variants={itemVariants}>
+                <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl hover:border-blue-600/20 transition-all duration-300 group">
+                  <PostThumbnail src={post.imageUrl} alt={post.title} />
+                  <CardHeader className="space-y-2 pt-6">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground font-medium">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {post.date}
+                    </div>
+                    <h3 className="text-xl font-bold leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                      {post.snippet}
+                    </p>
+                  </CardContent>
+                  <CardFooter className="pt-2 pb-6">
+                    <Button variant="ghost" className="w-full justify-between group/btn text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-blue-900/20" asChild>
+                      <a href={post.link} target="_blank" rel="noopener noreferrer">
+                        Read full post
+                        <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            );
+          })}
         </motion.div>
         <div className="flex justify-center">
           <Button size="lg" className="rounded-full px-8 gap-2 bg-[#0077B5] hover:bg-[#006396] shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95" asChild>
