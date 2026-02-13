@@ -20,10 +20,10 @@ export function Experience() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
-                <Card className="border border-border/50 shadow-sm hover:shadow-md transition-all overflow-hidden bg-card">
+                <Card className="border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all overflow-hidden bg-card">
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                      <div className="space-y-1">
+                      <div className="space-y-1.5">
                         <CardTitle className="text-2xl font-bold text-foreground">
                           {exp.company}
                         </CardTitle>
@@ -34,7 +34,7 @@ export function Experience() {
                         )}
                       </div>
                       <div className="shrink-0">
-                        <span className="text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50">
+                        <span className="inline-flex text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50">
                           {exp.period}
                         </span>
                       </div>
@@ -42,16 +42,16 @@ export function Experience() {
                   </CardHeader>
                   <CardContent className="pt-8 space-y-8">
                     <div className="space-y-2">
-                      <h4 className="text-xl font-bold text-foreground leading-snug">
+                      <h4 className="text-xl md:text-2xl font-bold text-foreground leading-snug max-w-2xl text-balance">
                         {exp.role}
                       </h4>
                     </div>
                     {exp.responsibilities.length > 0 && (
-                      <div className="space-y-5">
-                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                          Career Progression
+                      <div className="space-y-6">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
+                          Career Progression & Key Roles
                         </p>
-                        <ul className="grid gap-4 border-l-2 border-muted pl-5 ml-1">
+                        <ul className="grid gap-4 border-l-2 border-muted/50 pl-5 ml-1">
                           {exp.responsibilities.map((resp, i) => (
                             <li key={i} className="relative flex items-center gap-3 text-sm">
                               <div className="absolute -left-[1.625rem] h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500 border-2 border-card" />

@@ -1,20 +1,27 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Linkedin, ExternalLink, Calendar } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
 export function LinkedInActivity() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { staggerChildren: 0.15 }
     }
   };
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.5, 
+        ease: "easeOut" 
+      } 
+    }
   };
   return (
     <section id="linkedin-activity" className="py-24 bg-muted/30">
@@ -32,7 +39,7 @@ export function LinkedInActivity() {
             Insights on cybersecurity, edge computing, and digital transformation shared with the global professional community.
           </p>
         </div>
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,8 +50,8 @@ export function LinkedInActivity() {
             <motion.div key={idx} variants={itemVariants}>
               <Card className="h-full flex flex-col overflow-hidden border-border/40 hover:shadow-xl transition-all duration-300 group">
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={post.imageUrl} 
+                  <img
+                    src={post.imageUrl}
                     alt={post.title}
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                   />
