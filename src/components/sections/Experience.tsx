@@ -47,7 +47,7 @@ export function Experience() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
-                <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/20 transition-all overflow-hidden bg-card">
+                <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
                   <CardHeader className="pb-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
                       <div className="flex items-start gap-5">

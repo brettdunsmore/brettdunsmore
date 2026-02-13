@@ -59,7 +59,7 @@ export const profileData: ProfileData = {
     {
       company: "Cloudflare",
       logo: "https://logo.clearbit.com/cloudflare.com?size=64",
-      period: "October 2025 - Present",
+      period: "October 2024 - Present",
       description: "Senior Named Account Executive, Public Sector and Named Higher Education (QLD/NT).",
       responsibilities: [
         "Senior Named Account Executive, Public Sector"
@@ -68,7 +68,7 @@ export const profileData: ProfileData = {
     {
       company: "Dell Technologies",
       logo: "https://logo.clearbit.com/dell.com?size=64",
-      period: "December 2017 - October 2025",
+      period: "December 2017 - October 2024",
       description: "Federal and Public Sector, Defence, Large Enterprise and Higher Education",
       responsibilities: [
         "AI solutions strategy for Australia and New Zealand (2024-2025)",
