@@ -143,6 +143,7 @@ export const profileData: ProfileData = {
     "Workforce Transformation",
     "High-Performance Computing",
     "Hierarchical File Systems",
+    "Long-term data archive",
   ],
   linkedinPosts: [],
   presentations: [
