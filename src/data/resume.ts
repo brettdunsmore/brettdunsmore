@@ -83,7 +83,7 @@ export const profileData: ProfileData = {
       company: "The University of Queensland",
       logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
       period: "February 2009 - December 2017",
-      description: "Supporting Life Science Research (Institute for Molecular Bioscience)",
+      description: "Supporting Multidisciplinary Life Science Research (Institute for Molecular Bioscience)",
       responsibilities: [
         "Senior IT Manager (2012-2017)",
         "Service Delivery Manager (2010-2012)",
