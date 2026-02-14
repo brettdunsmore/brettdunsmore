@@ -40,7 +40,7 @@ A modern, full-stack portfolio website for Brett Dunsmore, built with React, Typ
 1. **Clone the repository**:
    ```
    git clone <your-repo-url>
-   cd brett-dunsmore-portf-bb5tyzzqf1j07fs1zq92o
+   cd brettdunsmore
    ```
 
 2. **Install dependencies**:
