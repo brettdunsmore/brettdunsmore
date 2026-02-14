@@ -102,8 +102,16 @@ export const profileData: ProfileData = {
       ]
     }
   ],
-  education: [],
-  skills/certifications: [
+  education: [
+    "NVIDIA Certified Associate (NCA-AIDC)",
+    "Microsoft Azure Fundamentals (AZ-900)",
+    "Certificate III (ICA30299) - Information Technology",
+    "Certificate II (UEE22007) - Restricted Electrician, Equipment Servicing",
+    "Certificate II (BSA20197) - Business, Administration",
+    "Certificate II - Stage Lighting and Sound Design",
+    "Year 12 Graduate (Prefect)",
+  ],
+  skills: [
     "Cybersecurity",
     "Web Services",
     "Edge Computing",
@@ -135,13 +143,6 @@ export const profileData: ProfileData = {
     "Workforce Transformation",
     "High-Performance Computing",
     "Hierarchical File Systems",
-    "NVIDIA Certified Associate (NCA-AIDC)",
-    "Microsoft Azure Fundamentals (AZ-900)",
-    "Certificate III (ICA30299) - Information Technology",
-    "Certificate II (UEE22007) - Restricted Electrician, Equipment Servicing",
-    "Certificate II (BSA20197) - Business, Administration",
-    "Certificate II - Stage Lighting and Sound Design",
-    "Year 12 Graduate (Prefect)",
   ],
   linkedinPosts: [],
   presentations: [
