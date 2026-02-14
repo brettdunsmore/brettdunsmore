@@ -46,9 +46,9 @@ export const profileData: ProfileData = {
   title: "Helping Build a Better Internet",
   summaryParagraphs: [
     "At Cloudflare, I help organisations protect their critical websites, APIs, and internal networks from cyber threats, securely connect users and devices to applications worldwide, and support application development teams in building scalable, high-performance applications enhanced by AI workers at the network edge.",
-    "Building on my 19+ years professional experience, I blend technical expertise with strong people and process skills, developed through individual contributor and leadership roles at Dell Technologies, IBM, and the University of Queensland; demonstrating measurable quality and impact while keeping people and outcomes at the center. I manage the full sales cycle from prospecting to close; working across clients, partners, and leadership to win new business and retain incumbent accounts.", 
-    "My background in training, support, and business development lets me shift easily between technical stakeholders and business strategy with the economic buyer, adapting to each client's unique requirements and bringing in the right support when needed.",
-    "I'm driven to make a tangible difference by giving others agency and enabling their success.",
+    "Over 19 years, I've blended technical expertise with strong people and process skills through individual contributor and leadership roles at Dell Technologies, IBM, and the University of Queensland—delivering measurable impact while keeping people and outcomes at the center.",
+    "I manage the full sales cycle from prospecting to close, working across clients, partners, and leadership to win new business and retain key accounts. My background in training, support, and business development allows me to navigate seamlessly between technical stakeholders and C-suite economic buyers, adapting to each client's needs and engaging the right resources at the right time.",
+    "I'm driven to make a tangible difference by empowering others and enabling their success."
   ],
   avatarUrl: "https://media.licdn.com/dms/image/v2/D4E03AQEVQ_myI5HDTw/profile-displayphoto-scale_400_400/B4EZpXtixKHcAg-/0/1762408148869?e=1772668800&v=beta&t=rc7zJAN-CSqCnOSY8V4b9GH0p3-pRKNacLgLJ8baALY",
   contact: {
