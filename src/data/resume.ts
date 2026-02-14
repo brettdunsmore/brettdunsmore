@@ -46,7 +46,7 @@ export const profileData: ProfileData = {
   title: "Helping Build a Better Internet",
   summaryParagraphs: [
     "At Cloudflare, I help organisations protect their critical websites, APIs, and internal networks from cyber threats, securely connect users and devices to applications worldwide, and support application development teams in building scalable, high-performance applications enhanced by AI workers at the network edge.",
-    "Building on my 19+ years experience, I blend technical expertise with strong people and process skills, developed through individual contributor and leadership roles at Dell Technologies, IBM, and the University of Queensland; demonstrating measurable quality and impact while keeping people and outcomes at the center. I manage the full sales cycle from prospecting to close; working across clients, partners, and leadership to win new business and retain incumbent accounts.", 
+    "Building on my 19+ years professional experience, I blend technical expertise with strong people and process skills, developed through individual contributor and leadership roles at Dell Technologies, IBM, and the University of Queensland; demonstrating measurable quality and impact while keeping people and outcomes at the center. I manage the full sales cycle from prospecting to close; working across clients, partners, and leadership to win new business and retain incumbent accounts.", 
     "My background in training, support, and business development lets me shift easily between technical discussions and business conversations, adapting to each client's needs and bringing in the right support when needed.",
     "I'm driven to make a tangible difference by giving others agency and enabling their success.",
   ],
