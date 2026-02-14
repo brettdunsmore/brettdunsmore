@@ -79,7 +79,7 @@ export const profileData: ProfileData = {
       ]
     },
     {
-      company: "The University of Queensland (IMB)",
+      company: "The University of Queensland (Institute for Molecular Bioscience)",
       logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
       period: "February 2009 - December 2017",
       description: "High-performance computing and data management, supporting Life Sciences research",
@@ -112,8 +112,11 @@ export const profileData: ProfileData = {
     "AI - Training",
     "NVIDIA AI Enterprise",
     "Generative AI",
+    "Digital Twin",
     "Vectorisation",
+    "Robotics",
     "Quantisation",
+    "Agentic AI",
     "Data Workflows and Pipelines",
     "Public Sector Procurement",
     "Public Sector Strategy",
@@ -121,6 +124,7 @@ export const profileData: ProfileData = {
     "Technical Enablement",
     "Leadership",
     "Sales GTM",
+    "Omnichannel GTM",
     "Sales Strategy",
     "Sales Forecasting",
     "Prople Management",
@@ -134,20 +138,20 @@ export const profileData: ProfileData = {
   linkedinPosts: [],
   presentations: [
     {
-      title: "The Perfect Research Cloud, by Researchers.",
-      event: "THETA Conference - 2025",
+      title: "The Perfect Research Cloud, by Researchers",
+      event: "THETA Conference - 2025 - Panelist",
       videoId: "4Vt7Q0vz5Y0",
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
     },
     {
-      title: "Unlock the Power of Data with AI",
-      event: "Dell Technologies, NVIDIA, AMD - 2024",
+      title: "Unlock the Power of Data, with AI",
+      event: "Dell Technologies, NVIDIA, AMD - 2024 - Panelist",
       videoId: "S5ZZAT2GqQQ",
       videoUrl: "https://youtu.be/S5ZZAT2GqQQ"
     },
     {
       title: "6D.ai - Standouts Panel",
-      event: "Emerging Tech Showcase - 2024",
+      event: "Emerging Tech Showcase - 2024 - Panelist",
       videoId: "SmZTZ2SzWLc",
       videoUrl: "https://youtu.be/SmZTZ2SzWLc"
     }
