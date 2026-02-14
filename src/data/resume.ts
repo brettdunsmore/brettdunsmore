@@ -139,7 +139,7 @@ export const profileData: ProfileData = {
   presentations: [
     {
       title: "The Perfect Research Cloud, by Researchers",
-      event: "THETA Conference - 2025 - Panelist",
+      event: "THETA Conference - 2025 - Keynote Speaker",
       videoId: "4Vt7Q0vz5Y0",
       videoUrl: "https://youtu.be/4Vt7Q0vz5Y0"
     },
