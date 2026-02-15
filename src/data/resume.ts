@@ -61,7 +61,7 @@ export const profileData: ProfileData = {
       company: "Cloudflare",
       logo: "https://www.clipartmax.com/png/middle/146-1469376_the-free-version-of-cloudflare-content-delivery-network-cloudflare-logo-png.png",
       period: "October 2025 - Present",
-      description: "Public Sector, Queensland and Northern Territory",
+      description: "Public Sector, Queensland and Northern Territory, Australia",
       responsibilities: [
         "Senior Named Account Executive"
       ]
@@ -72,22 +72,22 @@ export const profileData: ProfileData = {
       period: "December 2017 - October 2025",
       description: "State and Federal Government, Defence, Utilities, Higher Education, and Large Enterprise",
       responsibilities: [
-        "AI Solutions Strategy for Australia and New Zealand (2024-2025)",
-        "Principal Solutions Executive (2022-2024)",
-        "Data Centre Solutions Executive (2021-2022)",
-        "Senior Systems Engineer (2019-2021)",
-        "Systems Engineer / Solutions Consultant (2017-2019)"
+        "AI Solutions Strategy for Australia and New Zealand (2024-2025), APJ",
+        "Principal Solutions Executive (2022-2024), Australia",
+        "Data Centre Solutions Executive (2021-2022), Australia",
+        "Senior Systems Engineer (2019-2021), Australia",
+        "Systems Engineer / Solutions Consultant (2017-2019), Australia"
       ]
     },
     {
       company: "The University of Queensland",
       logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
-      period: "February 2009 - December 2017",
+      period: "February 2009 - December 2017, Australia",
       description: "Supporting Multidisciplinary Life Science Research (Institute for Molecular Bioscience)",
       responsibilities: [
-        "Senior IT Manager (2012-2017)",
-        "Service Delivery Manager (2010-2012)",
-        "Desktop Support (2009-2010)"
+        "Senior IT Manager (2012-2017), Australia",
+        "Service Delivery Manager (2010-2012), Australia",
+        "Desktop Support (2009-2010), Australia"
       ]
     },
     {
@@ -96,9 +96,9 @@ export const profileData: ProfileData = {
       period: "June 2006 - February 2009",
       description: "L3/4 Technical Support, Quality Assurance and Customer Experience",
       responsibilities: [
-        "Senior Technical Support (2008-2009)",
-        "Customer Relations Manager (2007-2008)",
-        "Technical Support Officer (2006-2007)"
+        "Senior Technical Support (2008-2009), Australia",
+        "Customer Relations Manager (2007-2008), Australia",
+        "Technical Support Officer (2006-2007), Australia"
       ]
     }
   ],
