@@ -70,7 +70,7 @@ export const profileData: ProfileData = {
       company: "Dell Technologies",
       logo: "https://brandlogos.net/wp-content/uploads/2022/08/dell_technologies-logo_brandlogos.net_kl1p4.png",
       period: "December 2017 - October 2025",
-      description: "Defence, State and Federal Government, Utilities, Higher Education, and Large Enterprise",
+      description: "State and Federal Government, Defence, Utilities, Higher Education, and Large Enterprise",
       responsibilities: [
         "AI Solutions Strategy for Australia and New Zealand (2024-2025)",
         "Principal Solutions Executive (2022-2024)",
