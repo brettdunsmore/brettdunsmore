@@ -61,9 +61,9 @@ export const profileData: ProfileData = {
       company: "Cloudflare",
       logo: "https://www.clipartmax.com/png/middle/146-1469376_the-free-version-of-cloudflare-content-delivery-network-cloudflare-logo-png.png",
       period: "October 2025 - Present",
-      description: "Public Sector, Queensland and Northern Territory",
+      description: "Public Sector",
       responsibilities: [
-        "Senior Named Account Executive, Australia"
+        "Senior Named Account Executive, Australia, Australia"
       ]
     },
     {
