@@ -63,7 +63,7 @@ export const profileData: ProfileData = {
       period: "October 2025 - Present",
       description: "Public Sector",
       responsibilities: [
-        "Senior Named Account Executive, Australia, Australia"
+        "Senior Named Account Executive, Australia"
       ]
     },
     {
