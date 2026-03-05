@@ -50,7 +50,7 @@ export const profileData: ProfileData = {
     "I manage the full sales cycle from prospecting to close, working across clients, partners, and leadership to win new business and retain key accounts. My background in training, support, and business development allows me to navigate seamlessly between technical stakeholders and C-suite economic buyers, adapting to each client's needs and engaging the right resources at the right time.",
     "I'm driven to make a tangible difference by empowering others and enabling their success."
   ],
-  avatarUrl: "https://imgur.com/a/voN05oc",
+  avatarUrl: "https://github.com/brettdunsmore/brettdunsmore/blob/main/src/assets/brett.jpg",
   contact: {
     email: "me@brettdunsmore.com",
     linkedin: "https://www.linkedin.com/in/dunsmorebrett",
