@@ -43,7 +43,7 @@ export interface ProfileData {
 }
 export const profileData: ProfileData = {
   name: "Brett Dunsmore",
-  title: "Doing the right thing, until the right outcome.",
+  title: "",
   summaryParagraphs: [
     "At Cloudflare, I help organisations protect their critical websites, APIs, and internal networks from cyber threats, securely connect users and devices to applications worldwide, and support application development teams in building scalable, high-performance applications enhanced by AI workers at the network edge.",
     "Over 19 years, I've blended technical expertise with strong people and process skills through individual contributor and leadership roles at Dell Technologies, IBM, and the University of Queensland — delivering measurable impact while keeping people and outcomes at the center.",
