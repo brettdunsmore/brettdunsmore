@@ -72,7 +72,7 @@ export const profileData: ProfileData = {
       period: "December 2017 - October 2025",
       description: "State and Federal Government, Defence, Utilities, Higher Education, and Large Enterprise",
       responsibilities: [
-        "AI Solutions Strategy for Australia and New Zealand (2024-2025), APJ",
+        "AI Solutions Strategy (NVIDIA & AMD) for Australia and New Zealand (2024-2025), APJ",
         "Principal Solutions Executive (2022-2024), Australia",
         "Data Centre Solutions Executive (2021-2022), Australia",
         "Senior Systems Engineer (2019-2021), Australia",
