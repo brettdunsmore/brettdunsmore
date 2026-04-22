@@ -45,9 +45,10 @@ export const profileData: ProfileData = {
   name: "Brett Dunsmore",
   title: "",
   summaryParagraphs: [
-    "I help public sector organisations bridge the gap between business agility and risk management using Cloudflare’s connectivity cloud. My clients deploy to Region: Earth.",
-    "Moving beyond traditional perimeter security, I empower teams to confidently adopt agentic workflows for the right reasons, seamlessly bridge hybrid environments with smarter traffic management, fight bot scraping, and deploy applications at the network edge to improve user experience. Crucially, I help clients secure their modern workforce by ensuring that whether an user is in the office, at home or a regional location, modern access methods are simple and Zero Trust principles keep corporate data safe while preventing data loss.",
-    "Over the last 19 years, spanning leadership and technical roles at Dell Technologies, IBM, and the University of Queensland, I’ve learned that technology only succeeds when it serves the user. My north star is always delivering measurable business impact while keeping people and processes at the heart of every outcome."
+    "Bridging the gap between business agility and risk management for public sector organisations is what drives my work with Cloudflare's connectivity cloud. My clients deploy to Region: Earth.",
+    "Moving beyond traditional perimeter-based cyber security, the focus is on empowering teams to confidently adopt agentic workflows, bridge hybrid environments with smarter traffic management, defend against bot scraping and emerging threats, and deploy applications at the network edge to improve performance and user experience, all while strengthening the security posture organisations need to combat the modern threat landscape.",
+    "Securing the modern workforce sits at the heart of this work. When access is tied directly to identity, it creates a Zero Trust foundation where tailored policies and the right restrictions are enforced for the right person, at the right time, ensuring corporate data stays protected and data loss is prevented wherever people perform their work.",
+    "With 19 years spanning leadership and technical roles at Dell Technologies, IBM, and the University of Queensland, one lesson has never changed: technology only succeeds when it serves the people using it. Delivering measurable business impact, with people and processes at the heart of every outcome, is the north star."
   ],
   avatarUrl: "https://raw.githubusercontent.com/brettdunsmore/brettdunsmore/refs/heads/main/src/assets/brett.jpg",
   contact: {
