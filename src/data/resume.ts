@@ -44,9 +44,9 @@ export interface ProfileData {
 export const profileData: ProfileData = {
   name: "Brett Dunsmore",
   title: "",
-     summaryParagraphs: [
+  summaryParagraphs: [
     "I help public sector organisations bridge the gap between business agility and risk management using Cloudflare’s connectivity cloud. My clients deploy to Region: Earth.",
-    "Moving beyond traditional perimeter security, I empower teams to confidently adopt agentic workflows for the right reasons, seamlessly bridge hybrid environments with smarter traffic management, fight bot scraping, and deploy applications at the network edge to improve user experience. Crucially, I help clients secure their modern workforce by ensuring that whether an employee is at the office, at home or a coffee shop, modern access methods are simple and Zero Trust principles keep corporate data safe while preventing data loss.",
+    "Moving beyond traditional perimeter security, I empower teams to confidently adopt agentic workflows for the right reasons, seamlessly bridge hybrid environments with smarter traffic management, fight bot scraping, and deploy applications at the network edge to improve user experience. Crucially, I help clients secure their modern workforce by ensuring that whether an employee is in the office, at home or a regional location, modern access methods are simple and Zero Trust principles keep corporate data safe while preventing data loss.",
     "Over the last 19 years, spanning leadership and technical roles at Dell Technologies, IBM, and the University of Queensland, I’ve learned that technology only succeeds when it serves the user. My north star is always delivering measurable business impact while keeping people and processes at the heart of every outcome."
   ],
   avatarUrl: "https://raw.githubusercontent.com/brettdunsmore/brettdunsmore/refs/heads/main/src/assets/brett.jpg",
