@@ -20,19 +20,7 @@ const NAV_LINKS = [
 ];
 const SCROLL_SPY_SECTIONS = ['about', 'experience', 'presentations', 'contact'];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
-  
-    href="#top"
-    aria-label="Brett Dunsmore - Home"
-    className={cn(
-      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-md ring-offset-background px-1",
-      className
-    )}
-    onClick={(e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (onClick) onClick();
-    }}
-  >
+  <a href="#top" aria-label="Brett Dunsmore - Home" className={cn("text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-md ring-offset-background px-1", className)} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); if (onClick) onClick(); }}>
     Brett Dunsmore<span className="text-orange-500">.</span>
   </a>
 );
@@ -71,14 +59,7 @@ export function Navbar() {
   };
   return (
     <>
-      <nav
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-          isScrolled
-            ? "bg-background/80 backdrop-blur-md border-b py-3 shadow-sm"
-            : "bg-transparent py-6"
-        )}
-      >
+      <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out", isScrolled ? "bg-background/80 backdrop-blur-md border-b py-3 shadow-sm" : "bg-transparent py-6")}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Brand onClick={() => setIsSheetOpen(false)} />
           <div className="hidden md:flex items-center gap-8">
