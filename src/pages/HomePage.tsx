@@ -11,10 +11,7 @@ export function HomePage() {
   }, []);
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-orange-500 selection:text-white flex flex-col transition-colors duration-300">
-    <a  
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-primary text-primary-foreground px-4 py-2 rounded-md font-bold shadow-lg"
-      >
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[100] bg-primary text-primary-foreground px-4 py-2 rounded-md font-bold shadow-lg">
         Skip to content
       </a>
       <div id="top" className="sr-only" aria-hidden="true" />
