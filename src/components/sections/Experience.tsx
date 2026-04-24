@@ -11,7 +11,7 @@ interface CompanyLogoProps {
 const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-100 flex items-center justify-center overflow-hidden p-2 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
+    <div className="shrink-0 w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-100 flex items-center justify-center overflow-hidden p-2 shadow-sm">
       {!error ? (
         <img
           src={src}
@@ -19,10 +19,10 @@ const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
           loading={isPriority ? "eager" : "lazy"}
           decoding="async"
           onError={() => setError(true)}
-          className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"
+          className="w-full h-full object-contain grayscale opacity-60"
         />
       ) : (
-        <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
+        <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground">
           <Building2 className="w-5 h-5" />
         </div>
       )}
@@ -36,7 +36,7 @@ export function Experience() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Professional History</h2>
-            <div className="h-1.5 w-12 bg-blue-600 rounded-full" />
+            <div className="h-1.5 w-12 bg-orange-500 rounded-full" />
           </div>
           <div className="space-y-12">
             {profileData.experience.map((exp, index) => (
@@ -47,7 +47,7 @@ export function Experience() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
-                <Card className="group border border-border/50 shadow-sm hover:shadow-md hover:border-blue-600/30 transition-all duration-300 overflow-hidden bg-card">
+                <Card className="border border-border/50 shadow-sm overflow-hidden bg-card">
                   <CardHeader className="p-4 sm:p-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="flex items-start gap-4 min-w-0">
@@ -65,7 +65,7 @@ export function Experience() {
                         </div>
                       </div>
                       <div className="shrink-0 self-start sm:self-center">
-                        <span className="inline-flex text-[10px] sm:text-xs font-bold tracking-tight text-blue-700 bg-blue-50 dark:bg-blue-900/40 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap justify-center shadow-sm">
+                        <span className="inline-flex text-[10px] sm:text-xs font-bold tracking-tight text-orange-600 bg-orange-100 dark:bg-orange-900/40 dark:text-orange-300 px-3 py-1.5 rounded-full border border-orange-100 dark:border-orange-900/50 whitespace-nowrap justify-center shadow-sm">
                           {exp.period}
                         </span>
                       </div>
@@ -77,7 +77,7 @@ export function Experience() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">
                           Strategic Focus & Scope
                         </p>
-                        <p className="text-sm sm:text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-blue-600/20 pl-4 py-1">
+                        <p className="text-sm sm:text-base text-foreground/90 font-medium leading-relaxed italic border-l-4 border-orange-500/20 pl-4 py-1">
                           {exp.description}
                         </p>
                       </div>
@@ -90,15 +90,15 @@ export function Experience() {
                         <div className="relative ml-2">
                           {exp.responsibilities.length > 1 && (
                             <div
-                              className="absolute left-0 top-3 w-[1.5px] bg-gradient-to-b from-blue-500/60 via-blue-500/30 to-blue-500/5 rounded-full"
+                              className="absolute left-0 top-3 w-[1.5px] bg-gradient-to-b from-orange-500/60 via-orange-500/30 to-orange-500/5 rounded-full"
                               style={{ height: `calc(100% - 1.5rem)` }}
                             />
                           )}
                           <ul className="relative grid gap-6">
                             {exp.responsibilities.map((resp, i) => (
-                              <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm group/item">
-                                <div className="absolute left-0 top-[0.6rem] -translate-x-1/2 h-2.5 w-2.5 shrink-0 rounded-full bg-blue-600 border-2 border-background shadow-[0_0_10px_rgba(37,99,235,0.2)] z-10 transition-all duration-300 group-hover/item:scale-125 group-hover/item:bg-blue-500 group-hover/item:shadow-[0_0_12px_rgba(37,99,235,0.4)]" />
-                                <span className="text-muted-foreground font-semibold leading-relaxed group-hover/item:text-foreground transition-colors duration-200">
+                              <li key={`resp-${exp.company}-${i}`} className="relative pl-8 flex items-start text-xs sm:text-sm">
+                                <div className="absolute left-0 top-[0.6rem] -translate-x-1/2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500 border-2 border-background shadow-[0_0_10px_rgba(234,88,12,0.2)] z-10" />
+                                <span className="text-muted-foreground font-semibold leading-relaxed">
                                   {resp}
                                 </span>
                               </li>
