@@ -16,13 +16,7 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            
-              href={profileData.contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm px-1"
-              aria-label="LinkedIn Profile"
-            >
+            <a href={profileData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm px-1" aria-label="LinkedIn Profile">
               <Linkedin className="w-5 h-5" />
               <span className="text-sm font-medium hidden sm:inline">LinkedIn</span>
             </a>
