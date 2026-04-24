@@ -46,7 +46,7 @@ export const profileData: ProfileData = {
   title: "",
   summaryParagraphs: [
     "A career spanning Dell Technologies, IBM, The University of Queensland, and now Cloudflare has taught me one thing. Technology only works when it actually helps people.",
-    "At Cloudflare, I work with government agencies to modernise their infrastructure and workflows without starting from scratch. That means securing AI transformation at every level, whether it's human workflows where people use AI tools or agentic workflows where systems act independently. It also means sorting out data governance, compliance, managing traffic across hybrid environments, dealing with real threats like bot attacks, and improving application performance at the network edge.",
+    "At Cloudflare, I work with Government agencies to modernise their infrastructure and workflows without starting from scratch. That means securing AI transformation at every level, whether it's human workflows where people use AI tools or agentic workflows where systems act independently. It also means sorting out data governance, compliance, managing traffic across hybrid environments, dealing with real threats like bot attacks, and improving application performance at the network edge.",
     "Digital transformation starts with the workforce and zero trust isn't just a concept. It's about making sure the right person has the right access, at the right time, and when you tie access to identity (with sensible policies), you protect corporate data wherever people work best.",
     "AI, Cloud, Zero Trust. They're just tools. ",
     "The outcome matters more than just the technology, and that's what I focus on."
