@@ -43,7 +43,7 @@ export interface ProfileData {
 }
 export const profileData: ProfileData = {
   name: "Brett Dunsmore",
-  title: "Senior Named Account Executive, Cloudflare",
+  title: "",
   summaryParagraphs: [
     "A career spanning IBM, The University of Queensland, Dell Technologies, and now Cloudflare has taught me one thing: technology only matters when it actually helps people.",
     "At Cloudflare, I work with Australian government agencies to modernise their infrastructure and workflows without starting from scratch — securing AI transformation across both human and agentic workflows, reviewing data governance and compliance, managing traffic across hybrid environments, handling real threats like bots and volumetric attacks, and improving application performance at the edge.",
