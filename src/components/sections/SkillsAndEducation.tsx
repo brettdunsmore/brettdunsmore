@@ -33,8 +33,8 @@ export function SkillsAndEducation() {
               <div className="space-y-8">
                 {profileData.education.map((edu, idx) => (
                   <div key={idx} className="relative pl-6 border-l-2 border-muted">
-                    <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-blue-600" />
-                    <p className="text-sm font-medium text-blue-600 mb-1">{edu.period}</p>
+                    <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full bg-orange-500" />
+                    <p className="text-sm font-medium text-orange-500 mb-1">{edu.period}</p>
                     <h4 className="text-lg font-bold">{edu.institution}</h4>
                     <p className="text-muted-foreground">{edu.degree}</p>
                   </div>
@@ -60,7 +60,7 @@ export function SkillsAndEducation() {
                     variant="secondary"
                     className={cn(
                       "px-6 py-2.5 text-sm font-semibold transition-all cursor-default border-border/50",
-                      "hover:bg-blue-600 hover:text-white hover:border-blue-600 hover:scale-105",
+                      "hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:scale-105",
                       !hasEducation && "text-base px-8 py-3"
                     )}
                   >
