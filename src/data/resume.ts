@@ -61,7 +61,7 @@ export const profileData: ProfileData = {
     {
       company: "Cloudflare",
       logo: "https://www.clipartmax.com/png/middle/146-1469376_the-free-version-of-cloudflare-content-delivery-network-cloudflare-logo-png.png",
-      period: "October 2025 - Present",
+      period: "October 2025 - Present, Australia",
       description: "Public Sector, QLD/NT",
       responsibilities: [
         "Senior Named Account Executive, Australia"
@@ -70,7 +70,7 @@ export const profileData: ProfileData = {
     {
       company: "Dell Technologies",
       logo: "https://brandlogos.net/wp-content/uploads/2022/08/dell_technologies-logo_brandlogos.net_kl1p4.png",
-      period: "December 2017 - October 2025",
+      period: "December 2017 - October 2025, Australia",
       description: "State and Federal Government, Utilities, Higher Education, and Large Enterprise",
       responsibilities: [
         "AI Solutions Strategy (NVIDIA & AMD) for Australia and New Zealand (2024-2025), APJ",
@@ -94,7 +94,7 @@ export const profileData: ProfileData = {
     {
       company: "IBM",
       logo: "https://www.freepnglogos.com/uploads/ibm-logo-png/ibm-logo-tableau-qlikview-tableau-power-power-20.png",
-      period: "June 2006 - February 2009",
+      period: "June 2006 - February 2009, Australia",
       description: "L3/4 Technical Support, Quality Assurance and Customer Experience",
       responsibilities: [
         "Senior Technical Support (2008-2009), Australia",
