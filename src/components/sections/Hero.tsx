@@ -61,9 +61,9 @@ export function Hero() {
           <div className="flex flex-col items-center justify-center mb-10">
             <motion.div
               variants={springVariants}
-              className="relative group"
+              className="relative"
             >
-              <div className="absolute inset-0 bg-blue-600/30 blur-[40px] rounded-full group-hover:bg-blue-600/40 transition-colors duration-500 dark:bg-blue-400/20" />
+              <div className="absolute inset-0 bg-orange-500/20 blur-[40px] rounded-full" />
               <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-background shadow-2xl overflow-hidden bg-muted flex items-center justify-center">
                 {!imageError ? (
                   <img
@@ -71,7 +71,7 @@ export function Hero() {
                     alt={profileData.name}
                     loading="eager"
                     onError={() => setImageError(true)}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <User className="w-14 h-14 text-muted-foreground" />
@@ -83,7 +83,7 @@ export function Hero() {
             variants={itemVariants}
             className="text-4xl xs:text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4"
           >
-            Hi, I'm {profileData.name.split(' ')[0]}<span className="text-blue-600">.</span>
+            Hi, I'm {profileData.name.split(' ')[0]}<span className="text-orange-500">.</span>
           </motion.h1>
           <motion.h2 variants={itemVariants} className="text-lg md:text-2xl font-semibold text-foreground/90 mb-10 max-w-3xl mx-auto leading-tight text-balance px-4">
             {profileData.title}
@@ -103,19 +103,19 @@ export function Hero() {
             ))}
           </motion.div>
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
-            <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg hover:shadow-blue-500/20 bg-blue-600 hover:bg-blue-700 transition-all" asChild>
+            <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg bg-orange-500 hover:bg-orange-600 transition-all" asChild>
               <a href="#experience">View Professional History</a>
             </Button>
             <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
               <ContactForm
                 trigger={
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-blue-200 hover:bg-blue-50 dark:border-blue-900/50 dark:hover:bg-blue-900/20 transition-all">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-orange-200 hover:bg-orange-100 dark:border-orange-900/50 dark:hover:bg-orange-900/20 transition-all">
                     Get in touch
                   </Button>
                 }
               />
               <CVDownloadButton
-                className="h-12 px-8 text-base border-blue-200 dark:border-blue-900/50"
+                className="h-12 px-8 text-base border-orange-200 dark:border-orange-900/50"
               />
             </div>
           </motion.div>
