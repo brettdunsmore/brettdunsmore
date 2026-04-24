@@ -56,14 +56,14 @@ export function Presentations() {
     <section id="presentations" className="py-24 bg-background scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-xs font-bold uppercase tracking-wider">
             <Youtube className="w-3.5 h-3.5" />
             Speaking & Keynotes
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Presentations & Talks</h2>
-          <div className="h-1.5 w-12 bg-red-600 rounded-full" />
+          <div className="h-1.5 w-12 bg-orange-500 rounded-full" />
           <p className="text-muted-foreground max-w-2xl mt-4">
-            Showcasing expertise through industry keynotes, technical deep-dives, and strategic discussions.
+            Industry keynotes, technical deep-dives, and strategic panels.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,14 +76,14 @@ export function Presentations() {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="flex"
             >
-              <Card className="flex flex-col w-full overflow-hidden border-border/40 hover:border-red-500/30 transition-all group shadow-sm hover:shadow-xl bg-card">
+              <Card className="flex flex-col w-full overflow-hidden border-border/40 hover:border-orange-500/30 transition-all group shadow-sm hover:shadow-xl bg-card">
                 <VideoThumbnail videoId={pres.videoId} title={pres.title} />
                 <CardContent className="pt-6 flex-grow flex flex-col justify-between">
                   <div className="space-y-2">
-                    <p className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-widest">
+                    <p className="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest">
                       {pres.event}
                     </p>
-                    <h3 className="text-xl font-bold leading-tight group-hover:text-red-600 transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold leading-tight group-hover:text-orange-600 transition-colors line-clamp-2">
                       {pres.title}
                     </h3>
                   </div>
@@ -92,7 +92,7 @@ export function Presentations() {
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="w-full gap-2 rounded-full border-red-200 dark:border-red-900/50 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors group-hover:bg-red-50" 
+                    className="w-full gap-2 rounded-full border-orange-200 dark:border-orange-900/50 hover:bg-orange-100 dark:hover:bg-orange-900/20 transition-colors group-hover:bg-orange-100 dark:group-hover:bg-orange-900/20" 
                     asChild
                   >
                     <a href={pres.videoUrl} target="_blank" rel="noopener noreferrer">
