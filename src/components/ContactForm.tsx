@@ -128,7 +128,7 @@ export function ContactForm({ trigger, open: externalOpen, onOpenChange: setExte
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={isSubmitting}>
+            <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
