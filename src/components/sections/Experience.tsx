@@ -11,7 +11,7 @@ interface CompanyLogoProps {
 const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
   const [error, setError] = useState(false);
   return (
-    <div className="shrink-0 w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-100 flex items-center justify-center overflow-hidden p-2 shadow-sm">
+    <div className="shrink-0 w-12 h-12 min-w-[48px] min-h-[48px] rounded-full border border-border/50 bg-white dark:bg-slate-100 flex items-center justify-center overflow-hidden p-2 shadow-sm group-hover:border-blue-500/30 transition-all duration-300">
       {!error ? (
         <img
           src={src}
@@ -19,10 +19,10 @@ const CompanyLogo = ({ src, alt, isPriority = false }: CompanyLogoProps) => {
           loading={isPriority ? "eager" : "lazy"}
           decoding="async"
           onError={() => setError(true)}
-          className="w-full h-full object-contain grayscale opacity-60"
+          className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out will-change-transform"
         />
       ) : (
-        <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground">
+        <div className="flex items-center justify-center w-full h-full bg-muted/20 text-muted-foreground group-hover:text-blue-600 transition-colors">
           <Building2 className="w-5 h-5" />
         </div>
       )}
@@ -47,7 +47,7 @@ export function Experience() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
               >
-                <Card className="border border-border/50 shadow-sm overflow-hidden bg-card">
+                <Card className="group border border-border/50 shadow-sm overflow-hidden bg-card">
                   <CardHeader className="p-4 sm:p-6 bg-muted/20 border-b border-border/40">
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       <div className="flex items-start gap-4 min-w-0">
