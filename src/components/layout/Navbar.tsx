@@ -20,11 +20,11 @@ const NAV_LINKS = [
 ];
 const SCROLL_SPY_SECTIONS = ['about', 'experience', 'presentations', 'contact'];
 const Brand = ({ className, onClick }: { className?: string; onClick?: () => void }) => (
-  <a
+  
     href="#top"
     aria-label="Brett Dunsmore - Home"
     className={cn(
-      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-md ring-offset-background px-1",
+      "text-xl font-bold tracking-tighter hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-md ring-offset-background px-1",
       className
     )}
     onClick={(e) => {
@@ -33,7 +33,7 @@ const Brand = ({ className, onClick }: { className?: string; onClick?: () => voi
       if (onClick) onClick();
     }}
   >
-    Brett Dunsmore<span className="text-blue-600">.</span>
+    Brett Dunsmore<span className="text-orange-500">.</span>
   </a>
 );
 export function Navbar() {
@@ -88,8 +88,8 @@ export function Navbar() {
                   key={link.name}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={cn(
-                    "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-1 ring-offset-background",
-                    activeSection === link.id ? "text-blue-600 scale-105" : "text-muted-foreground hover:text-foreground"
+                    "text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm px-1 ring-offset-background",
+                    activeSection === link.id ? "text-orange-500 scale-105" : "text-muted-foreground hover:text-foreground"
                   )}
                 >
                   {link.name}
@@ -105,7 +105,7 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                  className="h-10 w-10 focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
                   aria-label="Open navigation menu"
                 >
                   <Menu className="h-6 w-6" />
@@ -124,8 +124,8 @@ export function Navbar() {
                         key={link.name}
                         onClick={(e) => handleNavClick(e, link.href)}
                         className={cn(
-                          "text-lg font-semibold transition-colors py-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-sm px-2",
-                          activeSection === link.id ? "text-blue-600 bg-blue-50 dark:bg-blue-900/20" : "text-muted-foreground hover:text-foreground"
+                          "text-lg font-semibold transition-colors py-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm px-2",
+                          activeSection === link.id ? "text-orange-500 bg-orange-100 dark:bg-orange-900/20" : "text-muted-foreground hover:text-foreground"
                         )}
                       >
                         {link.name}
@@ -134,7 +134,7 @@ export function Navbar() {
                   </nav>
                   <div className="pt-8 border-t border-border/50 mt-auto pb-6">
                     <Button
-                      className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold"
+                      className="w-full rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold"
                       onClick={() => {
                         setIsSheetOpen(false);
                         setIsContactOpen(true);
@@ -149,7 +149,6 @@ export function Navbar() {
           </div>
         </div>
       </nav>
-      {/* Centralized Contact Modal */}
       <ContactForm open={isContactOpen} onOpenChange={setIsContactOpen} />
     </>
   );
