@@ -65,7 +65,7 @@ export function Experience() {
                         </div>
                       </div>
                       <div className="shrink-0 self-start sm:self-center">
-                        <span className="inline-flex text-[10px] sm:text-xs font-bold tracking-tight text-orange-600 bg-orange-100 dark:bg-orange-900/40 dark:text-orange-300 px-3 py-1.5 rounded-full border border-orange-100 dark:border-orange-900/50 whitespace-nowrap justify-center shadow-sm">
+                        <span className="inline-flex text-xs sm:text-sm font-bold tracking-tight text-orange-600 bg-orange-100 dark:bg-orange-900/40 dark:text-orange-300 px-4 py-2 rounded-full border border-orange-100 dark:border-orange-900/50 whitespace-nowrap justify-center shadow-sm">
                           {exp.period}
                         </span>
                       </div>
