@@ -48,7 +48,8 @@ export const profileData: ProfileData = {
     "A career spanning IBM, The University of Queensland, Dell Technologies, and now Cloudflare has taught me one thing: technology only matters when it actually helps people.",
     "At Cloudflare, I work with Australian government agencies to modernise their infrastructure and workflows without starting from scratch — securing AI transformation across both human and agentic workflows, reviewing data governance and compliance, managing traffic across hybrid environments, handling real threats like bots and volumetric attacks, and improving application performance at the edge.",
     "Digital transformation starts with the workforce. Zero Trust isn't just a concept — it's making sure the right person has the right access at the right time, tied to identity and sensible policy, so corporate data stays protected wherever people work best.",
-    "AI, Cloud, Zero Trust. They're just tools."
+    "AI, Cloud, Zero Trust. They're just tools.",
+    "Outcomes are what count."
   ],
   avatarUrl: "https://raw.githubusercontent.com/brettdunsmore/brettdunsmore/refs/heads/main/src/assets/brett.jpg",
   contact: {
