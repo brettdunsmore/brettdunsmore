@@ -67,3 +67,86 @@
       radial-gradient(at 50% 50%, hsla(25, 95%, 53%, 0.03) 0px, transparent 80%);
   }
 }
+
+/* Print stylesheet — strip the chrome, keep the content */
+@media print {
+  /* Force light, kill animations, drop fancy backgrounds */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  html.dark, .dark {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --muted-foreground: 0 0% 30%;
+    --border: 0 0% 80%;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  /* Hide interactive chrome */
+  nav, footer, button, .bg-gradient-mesh,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+  /* Show inline links cleanly */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    font-weight: normal;
+  }
+  /* Don't print href for in-page anchors */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  /* Hero — drop the gigantic display sizes for print */
+  section#about {
+    min-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+  section#about h1 {
+    font-size: 28pt !important;
+    margin-bottom: 0.25rem !important;
+  }
+  section#about p,
+  section#about h2 {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+  section#about img {
+    max-width: 80px !important;
+    max-height: 80px !important;
+  }
+  section#about .bg-orange-500\/20 {
+    display: none !important;
+  }
+  /* Section spacing */
+  section {
+    page-break-inside: avoid;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  /* Experience cards — tight, printable */
+  section#experience .group {
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    margin-bottom: 0.75rem !important;
+  }
+  /* Hide the section dividers */
+  main > div[aria-hidden="true"] {
+    display: none !important;
+  }
+}
