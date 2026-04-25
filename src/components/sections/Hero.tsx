@@ -81,11 +81,17 @@ export function Hero() {
           </div>
           <motion.h1
             variants={itemVariants}
-            className="text-4xl xs:text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4"
+            className="text-5xl xs:text-6xl md:text-8xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4 leading-[1.05]"
           >
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-orange-500">.</span>
           </motion.h1>
-          <motion.h2 variants={itemVariants} className="text-lg md:text-2xl font-semibold text-foreground/90 mb-10 max-w-3xl mx-auto leading-tight text-balance px-4">
+          <motion.p
+            variants={itemVariants}
+            className="text-3xl md:text-5xl font-bold tracking-tight mb-6 px-4 leading-[1.1]"
+          >
+            Outcomes are <span className="text-orange-500">what count</span>.
+          </motion.p>
+          <motion.h2 variants={itemVariants} className="text-base md:text-xl font-medium text-muted-foreground mb-12 max-w-3xl mx-auto leading-snug tracking-tight px-4">
             {profileData.title}
           </motion.h2>
           <motion.div
