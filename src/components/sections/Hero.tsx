@@ -85,12 +85,6 @@ export function Hero() {
           >
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-orange-500">.</span>
           </motion.h1>
-          <motion.p
-            variants={itemVariants}
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-6 px-4 leading-[1.1]"
-          >
-            Outcomes are <span className="text-orange-500">what count</span>.
-          </motion.p>
           <motion.h2 variants={itemVariants} className="text-base md:text-xl font-medium text-muted-foreground mb-12 max-w-3xl mx-auto leading-snug tracking-tight px-4">
             {profileData.title}
           </motion.h2>
