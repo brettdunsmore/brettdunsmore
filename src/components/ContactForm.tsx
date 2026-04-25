@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { toast } from 'sonner';
+import { Mail } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -22,6 +23,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { profileData } from '@/data/resume';
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -78,10 +80,14 @@ export function ContactForm({ trigger, open: externalOpen, onOpenChange: setExte
       )}
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Send an Inquiry</DialogTitle>
+          <DialogTitle>Get in touch</DialogTitle>
           <DialogDescription>
             Fill out the form below and I'll reach out to you directly.
           </DialogDescription>
+          <a href={`mailto:${profileData.contact.email}`} className="inline-flex items-center gap-2 text-sm font-medium text-orange-500 hover:text-orange-600 transition-colors mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm">
+            <Mail className="w-4 h-4" />
+            {profileData.contact.email}
+          </a>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 pt-4">
