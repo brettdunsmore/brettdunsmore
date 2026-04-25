@@ -5,9 +5,14 @@ import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Experience } from '@/components/sections/Experience';
 import { Presentations } from '@/components/sections/Presentations';
+const SectionDivider = () => (
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-hidden="true">
+    <div className="h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent" />
+  </div>
+);
 export function HomePage() {
   useEffect(() => {
-    document.title = "Brett Dunsmore";
+    document.title = "Brett Dunsmore — Senior Account Executive, Cloudflare";
   }, []);
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-orange-500 selection:text-white flex flex-col transition-colors duration-300">
@@ -18,10 +23,10 @@ export function HomePage() {
       <Navbar />
       <main id="main-content" className="flex-grow focus:outline-none" tabIndex={-1}>
         <Hero />
-        <div className="space-y-0">
-          <Experience />
-          <Presentations />
-        </div>
+        <SectionDivider />
+        <Experience />
+        <SectionDivider />
+        <Presentations />
       </main>
       <Footer />
       <Toaster richColors closeButton position="bottom-right" />
