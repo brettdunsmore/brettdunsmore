@@ -88,8 +88,8 @@
     transition: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
-    color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   /* Hide interactive chrome */
   nav, footer, button, .bg-gradient-mesh,
