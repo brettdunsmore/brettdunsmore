@@ -1,11 +1,14 @@
 # robots.txt for brettdunsmore.com
-# Allow all search engines to crawl the entire site
 
 User-agent: *
 Allow: /
 
-# Sitemap location
-Sitemap: https://brettdunsmore.com/sitemap.xml
+# Block AI training scrapers (optional but increasingly common best practice)
+User-agent: GPTBot
+Disallow: /
 
-# Optional: Crawl-delay if you want to be nice to bots
-# Crawl-delay: 1
+User-agent: CCBot
+Disallow: /
+
+# Sitemap location — ensure your actual file is served at this lowercase path
+Sitemap: https://brettdunsmore.com/sitemap.xml
