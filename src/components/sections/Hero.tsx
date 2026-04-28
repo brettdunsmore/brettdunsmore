@@ -48,7 +48,7 @@ export function Hero() {
   };
 
   return (
-    <section id="about" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
+    <section id="about" className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-mesh opacity-20 dark:opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
@@ -100,7 +100,7 @@ export function Hero() {
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
             <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg bg-orange-500 hover:bg-orange-600 transition-all" asChild>
-              <a href="#working-on">View Professional History</a>
+              <a href="#experience">View Professional History</a>
             </Button>
             <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
               <ContactForm
