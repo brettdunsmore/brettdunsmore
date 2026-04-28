@@ -3,8 +3,10 @@ import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { profileData } from '@/data/resume';
 import { ContactForm } from '@/components/ContactForm';
 import { CVDownloadButton } from '@/components/CVDownloadButton';
+
 export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
     <footer id="contact" className="border-t bg-muted/30 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -13,9 +15,6 @@ export function Footer() {
             <h3 className="text-xl font-bold tracking-tight">Brett Dunsmore</h3>
             <p className="text-xs text-muted-foreground/60 pt-1">
               © {new Date().getFullYear()} All rights reserved.
-            </p>
-            <p className="text-xs text-muted-foreground/60">
-              Powered by <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-sm">Cloudflare</a>
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
