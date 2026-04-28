@@ -5,8 +5,10 @@ import { Button } from '@/components/ui/button';
 import { profileData } from '@/data/resume';
 import { ContactForm } from '@/components/ContactForm';
 import { CVDownloadButton } from '@/components/CVDownloadButton';
+
 export function Hero() {
   const [imageError, setImageError] = useState(false);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -17,16 +19,7 @@ export function Hero() {
       }
     }
   };
-  const paragraphContainerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
+
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: {
@@ -35,6 +28,7 @@ export function Hero() {
       transition: { duration: 0.5, ease: [0.25, 1, 0.5, 1] }
     }
   };
+
   const springVariants: Variants = {
     hidden: { opacity: 0, scale: 0.85 },
     visible: {
@@ -48,6 +42,7 @@ export function Hero() {
       }
     }
   };
+
   return (
     <section id="about" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-mesh opacity-20 dark:opacity-10 pointer-events-none" />
@@ -63,8 +58,7 @@ export function Hero() {
               variants={springVariants}
               className="relative"
             >
-              <div className="absolute inset-0 bg-orange-500/20 blur-[40px] rounded-full" />
-              <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-background shadow-2xl overflow-hidden bg-muted flex items-center justify-center">
+              <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-muted flex items-center justify-center ring-2 ring-orange-500 ring-offset-4 ring-offset-background">
                 {!imageError ? (
                   <img
                     src={profileData.avatarUrl}
@@ -79,48 +73,27 @@ export function Hero() {
               </div>
             </motion.div>
           </div>
+
           <motion.h1
             variants={itemVariants}
-            className="text-5xl xs:text-6xl md:text-8xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4 leading-[1.05]"
+            className="text-5xl xs:text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4 leading-[1.05]"
           >
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-orange-500">.</span>
           </motion.h1>
-          <motion.h2 variants={itemVariants} className="text-base md:text-xl font-medium text-muted-foreground mb-12 max-w-3xl mx-auto leading-snug tracking-tight px-4">
-            {profileData.title}
-          </motion.h2>
-          <motion.div
-            variants={paragraphContainerVariants}
-            className="text-base md:text-lg text-muted-foreground mb-12 max-w-3xl mx-auto space-y-6 text-balance text-left md:text-center px-4"
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-2xl text-muted-foreground mb-2 max-w-3xl mx-auto leading-snug tracking-tight px-4"
           >
-            {profileData.summaryParagraphs.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                variants={itemVariants}
-                className="leading-relaxed md:leading-8"
-              >
-                {paragraph}
-              </motion.p>
-            ))}
-          </motion.div>
+            AI, Cloud, Zero Trust. They're just tools.
+          </motion.p>
+          <motion.p
+            variants={itemVariants}
+            className="text-lg md:text-2xl font-medium text-foreground mb-12 max-w-3xl mx-auto leading-snug tracking-tight px-4"
+          >
+            Outcomes are what count.
+          </motion.p>
+
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
             <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg bg-orange-500 hover:bg-orange-600 transition-all" asChild>
-              <a href="#experience">View Professional History</a>
-            </Button>
-            <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
-              <ContactForm
-                trigger={
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-orange-200 hover:bg-orange-100 dark:border-orange-900/50 dark:hover:bg-orange-900/20 transition-all">
-                    Get in touch
-                  </Button>
-                }
-              />
-              <CVDownloadButton
-                className="h-12 px-8 text-base border-orange-200 dark:border-orange-900/50"
-              />
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
+              <a href="#working-on">View Pr
