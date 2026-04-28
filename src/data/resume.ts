@@ -1,3 +1,8 @@
+import cloudflareLogo from '@/assets/logos/cloudflare.svg';
+import dellLogo from '@/assets/logos/dell.svg';
+import uqLogo from '@/assets/logos/uq.svg';
+import ibmLogo from '@/assets/logos/ibm.svg';
+
 export interface Experience {
   company: string;
   logo: string;
@@ -60,7 +65,7 @@ export const profileData: ProfileData = {
   experience: [
     {
       company: "Cloudflare",
-      logo: "https://www.clipartmax.com/png/middle/146-1469376_the-free-version-of-cloudflare-content-delivery-network-cloudflare-logo-png.png",
+      logo: cloudflareLogo,
       period: "October 2025 - Present, Australia",
       description: "Public Sector, QLD/NT",
       responsibilities: [
@@ -69,7 +74,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "Dell Technologies",
-      logo: "https://brandlogos.net/wp-content/uploads/2022/08/dell_technologies-logo_brandlogos.net_kl1p4.png",
+      logo: dellLogo,
       period: "December 2017 - October 2025, Australia",
       description: "State and Federal Government, Utilities, Higher Education, and Large Enterprise",
       responsibilities: [
@@ -82,7 +87,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "The University of Queensland",
-      logo: "https://universitiesaustralia.edu.au/wp-content/uploads/2019/05/UQ-300x300.png",
+      logo: uqLogo,
       period: "February 2009 - December 2017, Australia",
       description: "Supporting Multidisciplinary Life Science Research (Institute for Molecular Bioscience)",
       responsibilities: [
@@ -93,7 +98,7 @@ export const profileData: ProfileData = {
     },
     {
       company: "IBM",
-      logo: "https://www.freepnglogos.com/uploads/ibm-logo-png/ibm-logo-tableau-qlikview-tableau-power-power-20.png",
+      logo: ibmLogo,
       period: "June 2006 - February 2009, Australia",
       description: "L3/4 Technical Support, Quality Assurance and Customer Experience",
       responsibilities: [
