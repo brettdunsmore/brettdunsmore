@@ -3,6 +3,7 @@ import { Toaster } from '@/components/ui/sonner';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
+import { WhatImWorkingOn } from '@/components/sections/WhatImWorkingOn';
 import { Experience } from '@/components/sections/Experience';
 import { Presentations } from '@/components/sections/Presentations';
 
@@ -26,6 +27,8 @@ export function HomePage() {
       <Navbar />
       <main id="main-content" className="flex-grow focus:outline-none" tabIndex={-1}>
         <Hero />
+        <SectionDivider />
+        <WhatImWorkingOn />
         <SectionDivider />
         <Experience />
         <SectionDivider />
