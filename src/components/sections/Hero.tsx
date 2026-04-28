@@ -9,6 +9,10 @@ import { CVDownloadButton } from '@/components/CVDownloadButton';
 export function Hero() {
   const [imageError, setImageError] = useState(false);
 
+  // Hero shows only the closing two-beat statement.
+  // Earlier paragraphs render in the WhatImWorkingOn section.
+  const heroLines = profileData.summaryParagraphs.slice(-2);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,7 +48,7 @@ export function Hero() {
   };
 
   return (
-    <section id="about" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
+    <section id="about" className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-24 pb-16 scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-mesh opacity-20 dark:opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
@@ -76,7 +80,7 @@ export function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl xs:text-6xl md:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4 leading-[1.05]"
+            className="text-5xl xs:text-6xl md:text-8xl font-bold tracking-tight mb-10 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80 px-4 leading-[1.05]"
           >
             Hi, I'm {profileData.name.split(' ')[0]}<span className="text-orange-500">.</span>
           </motion.h1>
@@ -85,15 +89,34 @@ export function Hero() {
             variants={itemVariants}
             className="text-lg md:text-2xl text-muted-foreground mb-2 max-w-3xl mx-auto leading-snug tracking-tight px-4"
           >
-            AI, Cloud, Zero Trust. They're just tools.
+            {heroLines[0]}
           </motion.p>
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-2xl font-medium text-foreground mb-12 max-w-3xl mx-auto leading-snug tracking-tight px-4"
           >
-            Outcomes are what count.
+            {heroLines[1]}
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
             <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base rounded-full shadow-lg bg-orange-500 hover:bg-orange-600 transition-all" asChild>
-              <a href="#working-on">View Pr
+              <a href="#working-on">View Professional History</a>
+            </Button>
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
+              <ContactForm
+                trigger={
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base rounded-full border-orange-200 hover:bg-orange-100 dark:border-orange-900/50 dark:hover:bg-orange-900/20 transition-all">
+                    Get in touch
+                  </Button>
+                }
+              />
+              <CVDownloadButton
+                className="h-12 px-8 text-base border-orange-200 dark:border-orange-900/50"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
