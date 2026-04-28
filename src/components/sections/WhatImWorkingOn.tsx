@@ -27,11 +27,18 @@ export function WhatImWorkingOn() {
     }
   };
 
+  // Split the opening sentence into setup and punchline.
+  // First paragraph format: "[Setup]: [punchline]"
+  const opener = paragraphs[0] ?? '';
+  const splitIndex = opener.indexOf(':');
+  const setup = splitIndex >= 0 ? opener.slice(0, splitIndex + 1).trim() : opener;
+  const punchline = splitIndex >= 0 ? opener.slice(splitIndex + 1).trim() : '';
+
   return (
     <section
       id="working-on"
       aria-labelledby="working-on-heading"
-      className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 scroll-mt-24"
+      className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 pb-32 md:pb-40 scroll-mt-24"
     >
       <motion.div
         initial="hidden"
@@ -49,10 +56,19 @@ export function WhatImWorkingOn() {
         <motion.h2
           id="working-on-heading"
           variants={itemVariants}
-          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight mb-10"
+          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight mb-4"
         >
-          {paragraphs[0]}
+          {setup}
         </motion.h2>
+
+        {punchline && (
+          <motion.p
+            variants={itemVariants}
+            className="text-2xl md:text-3xl font-medium italic tracking-tight text-orange-500 leading-tight mb-10"
+          >
+            {punchline}
+          </motion.p>
+        )}
 
         <motion.div
           variants={containerVariants}
