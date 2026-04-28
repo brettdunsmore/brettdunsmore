@@ -3,6 +3,10 @@ import { motion, Variants } from 'framer-motion';
 import { profileData } from '@/data/resume';
 
 export function WhatImWorkingOn() {
+  // Show all paragraphs except the closing two-beat statement,
+  // which renders in the Hero.
+  const paragraphs = profileData.summaryParagraphs.slice(0, -2);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +41,7 @@ export function WhatImWorkingOn() {
       >
         <motion.p
           variants={itemVariants}
-          className="mb-4 text-sm font-medium uppercase tracking-wider text-orange-500"
+          className="mb-6 text-sm font-medium uppercase tracking-wider text-orange-500"
         >
           What I'm working on
         </motion.p>
@@ -45,16 +49,16 @@ export function WhatImWorkingOn() {
         <motion.h2
           id="working-on-heading"
           variants={itemVariants}
-          className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight"
+          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight mb-10"
         >
-          {profileData.title}
+          {paragraphs[0]}
         </motion.h2>
 
         <motion.div
           variants={containerVariants}
-          className="mt-10 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground"
+          className="space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground"
         >
-          {profileData.whatImWorkingOnParagraphs.map((paragraph, index) => (
+          {paragraphs.slice(1).map((paragraph, index) => (
             <motion.p key={index} variants={itemVariants}>
               {paragraph}
             </motion.p>
