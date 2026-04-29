@@ -10,7 +10,6 @@ interface CVDownloadButtonProps {
   label?: string;
 }
 
-// Friendly download filename — independent of the hashed asset name Vite emits.
 const DOWNLOAD_FILENAME = 'Brett_Dunsmore_CV_2026.pdf';
 
 export function CVDownloadButton({
@@ -19,16 +18,8 @@ export function CVDownloadButton({
   label = 'Download CV',
 }: CVDownloadButtonProps) {
   return (
-    <Button
-      asChild
-      variant={variant}
-      className={cn('gap-2 rounded-full font-semibold', className)}
-    >
-      
-        href={cvFile}
-        download={DOWNLOAD_FILENAME}
-        aria-label="Download Brett Dunsmore CV (PDF)"
-      >
+    <Button asChild variant={variant} className={cn('gap-2 rounded-full font-semibold', className)}>
+      <a href={cvFile} download={DOWNLOAD_FILENAME} aria-label="Download Brett Dunsmore CV PDF">
         <FileDown className="w-4 h-4" aria-hidden="true" />
         {label}
       </a>
