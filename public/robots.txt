@@ -6,10 +6,13 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# Major AI / LLM crawlers — explicitly allowed
-# (some honour these, some ignore robots.txt entirely; the explicit allow
-# signals intent and is read by crawlers that respect granular rules)
+# Content Signals (IETF draft-romm-aipref-contentsignals)
+# ai-train=no   — do not use this content to train AI models
+# search=yes     — AI-powered search may index and surface this content
+# ai-input=yes   — AI agents may read and use this content in real-time context
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+# Major AI / LLM crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
 
