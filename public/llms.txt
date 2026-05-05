@@ -1,0 +1,46 @@
+# Brett Dunsmore
+
+> Senior Named Account Executive at Cloudflare in Brisbane, Queensland, Australia. Helping Australian government and enterprise organisations modernise infrastructure, implement Zero Trust security, secure AI transformation, and protect against cyber threats. Career spans IBM, The University of Queensland, Dell Technologies, and Cloudflare.
+
+## Current role
+
+- **Title:** Senior Named Account Executive — Public Sector QLD/NT
+- **Employer:** Cloudflare
+- **Started:** October 2025
+- **Location:** Brisbane, Queensland, Australia
+- **Focus areas:** Australian government infrastructure modernisation, Zero Trust security, AI transformation security (human and agentic workflows), data governance and compliance, hybrid traffic management, bot and volumetric attack mitigation, edge application performance.
+
+## Professional history
+
+- **Cloudflare** (October 2025 – Present) — Senior Named Account Executive, Public Sector QLD/NT
+- **Dell Technologies** (December 2017 – October 2025) — roles held: AI Solutions Strategy ANZ; Principal Solutions Executive; Data Centre Solutions Executive; Senior Systems Engineer; Systems Engineer / Solutions Consultant
+- **The University of Queensland** (February 2009 – December 2017) — roles held: Senior IT Manager; Service Delivery Manager; Desktop Support — Institute for Molecular Bioscience
+- **IBM** (June 2006 – February 2009) — roles held: Senior Technical Support; Customer Relations Manager; Technical Support Officer
+
+## Areas of expertise
+
+Cybersecurity, Zero Trust security, edge computing, API security, network security, SASE, cloud security, AI strategy and security, generative AI, agentic AI, AI inference, AI training, NVIDIA AI Enterprise, digital transformation, public sector strategy and procurement, Australian government IT, defence technologies, data centre infrastructure (including power distribution and cooling), network fabrics, high-performance computing, hierarchical file systems, long-term data archive, data workflows and pipelines, data governance, vectorisation, quantisation, digital twin, robotics, lifecycle management, workforce transformation, technical enablement.
+
+## Speaking engagements
+
+- **THETA Conference 2025** — Keynote: *The Perfect Research Cloud, by Researchers*
+- **Dell Technologies, NVIDIA, AMD 2024** — Panelist: *Unlock the Power of Data, with AI*
+- **Emerging Tech Showcase 2024** — Panelist: *6D.ai Standouts*
+
+## Background and approach
+
+A career across IBM, The University of Queensland, Dell Technologies, and Cloudflare focused on a consistent principle: technology only matters when it actually helps people. At Cloudflare, work centres on Australian government agencies modernising infrastructure and workflows without rebuilding from scratch — securing AI transformation across both human and agentic workflows, reviewing data governance and compliance, managing traffic across hybrid environments, handling real-world threats including bots and volumetric attacks, and improving application performance at the edge.
+
+Digital transformation is treated as starting with the workforce. Zero Trust is framed not as a concept but as ensuring the right person has the right access at the right time, tied to identity and sensible policy, so corporate data stays protected wherever people work best.
+
+AI, cloud, and Zero Trust are positioned as tools — outcomes are what count.
+
+## Public profiles
+
+- **LinkedIn:** https://www.linkedin.com/in/dunsmorebrett
+- **GitHub:** https://github.com/brettdunsmore
+- **Personal site:** https://brettdunsmore.com
+
+## Contact
+
+Connect via LinkedIn at https://www.linkedin.com/in/dunsmorebrett
