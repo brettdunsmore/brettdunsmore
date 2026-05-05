@@ -1,7 +1,5 @@
 # Brett Dunsmore Portfolio
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/brettdunsmore/brettdunsmore)
-
 ## Overview
 
 A modern, full-stack portfolio website for Brett Dunsmore, built with React, TypeScript, and Cloudflare Workers. This project features a responsive frontend with shadcn/ui components, Tailwind CSS styling, and a powerful API backend powered by Hono on Cloudflare Workers. It's optimized for performance, SEO, and seamless deployment to Cloudflare.
@@ -81,10 +79,6 @@ Outputs to `dist/` for Cloudflare deployment.
 
 ## Deployment
 
-Deploy to Cloudflare Workers/Pages with zero-config:
-
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/brettdunsmore/brettdunsmore)
-
 1. **Login to Cloudflare**:
    ```
    bunx wrangler@latest login
@@ -136,4 +130,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [shadcn/ui](https://ui.shadcn.com/)
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
 
-Built with ❤️ for Cloudflare Developers.
+Built with Cloudflare Developers and Claude.ai
