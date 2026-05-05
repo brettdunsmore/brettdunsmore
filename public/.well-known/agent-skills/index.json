@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "profile-summary",
+      "type": "skill-md",
+      "description": "Structured markdown summary of Brett Dunsmore — professional background, current role at Cloudflare, work history, areas of expertise, and speaking engagements. Intended for AI agents researching this person.",
+      "url": "https://brettdunsmore.com/llms.txt",
+      "digest": "sha256:4a119e5e7a8d3d6d230c769228e4dcf7991679d9ba4d01b4364b51125128c11b"
+    }
+  ]
+}
